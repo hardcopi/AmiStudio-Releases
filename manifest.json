@@ -66,7 +66,7 @@
       "id": "matrixchat",
       "placeholder": true,
       "name": "Matrix Chat",
-      "desc": "Matrix chat client with Discord bridging",
+      "desc": "Matrix chat client with end-to-end encryption; shows Discord-bridged rooms",
       "status": "soon",
       "drawer": "MatrixChat",
       "exe": "MatrixChat",

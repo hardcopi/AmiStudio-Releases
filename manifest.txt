@@ -45,7 +45,7 @@ min_launcher 0.1.1
 
 app matrixchat
 name Matrix Chat
-desc Matrix chat client with Discord bridging
+desc Matrix chat client with end-to-end encryption; shows Discord-bridged rooms
 status soon
 drawer MatrixChat
 exe MatrixChat
