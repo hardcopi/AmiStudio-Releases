@@ -12,11 +12,11 @@ thin **Update** button = newer version available) and installs, updates and roll
 | App | id | Status |
 |---|---|---|
 | AmiStudio (launcher) | `launcher` | 0.1.3 beta |
-| Paint | `paint` | 1.0.63 beta |
+| AmiPaint (formerly Paint) | `amipaint` (was `paint`) | 1.0.63 beta |
 | AmiSurf | `amisurf` | 0.82 beta |
 | Matrix Chat | `matrixchat` | 0.1 beta |
 
-The suite name stays **AmiStudio**. App display names are Paint, AmiSurf and Matrix Chat (formerly AmiStudio Paint,
+The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf and Matrix Chat (formerly Paint / AmiStudio Paint,
 AmiStudio Browser and AmiStudio Chat).
 
 "Coming soon" entries are placeholders: the launcher lists them as grey icons and does not offer to install them
@@ -33,13 +33,13 @@ contains `<App>.info` and the `<App>/` drawer at its top level.
 ## Tags and asset names
 
 - One GitHub Release per app version. Tag `<app>-v<ver>`, all lower case:
-  `paint-v1.0.63`, `amisurf-v0.79`, `matrixchat-v0.2`, `launcher-v0.1.1`, `host-v0.1`.
-- Release title is the display name plus version (`Paint 1.0.63`, `AmiSurf 0.79`, `Matrix Chat 0.2`); the body is
+  `amipaint-v1.0.63`, `amisurf-v0.79`, `matrixchat-v0.2`, `launcher-v0.1.1`, `host-v0.1`.
+- Release title is the display name plus version (`AmiPaint 1.0.63`, `AmiSurf 0.79`, `Matrix Chat 0.2`); the body is
   that version's CHANGES section.
 - Assets:
   - Amiga archive `<Drawer>-<ver>.lha`, packed with `jlha c1q`:
-    - Paint: `Paint-<ver>.lha` (final archive name pending the Paint bot; may still ship as `AmiStudioPaint-<ver>.lha`
-      until that bot updates)
+    - AmiPaint: `AmiPaint-<ver>.lha` (id `amipaint`; 1.0.63 was first released as `Paint-1.0.63.lha` under id `paint`,
+      tag `paint-v1.0.63`, kept on GitHub but no longer in the manifest)
     - AmiSurf: `AmiSurf-<ver>.lha`
     - Matrix Chat: `MatrixChat-<ver>.lha`
     - Launcher: `AmiStudio-<ver>.lha`
@@ -62,22 +62,22 @@ format 1                  # required, first
 updated 2026-10-17
 launcher_min 0.1.1        # older launchers say "please update AmiStudio first"
 
-app paint                 # starts a block; a blank line ends it
-name Paint
+app amipaint              # starts a block; a blank line ends it
+name AmiPaint
 desc Photoshop-class paint program (PhotoCraft based)
 ver 1.0.63
 date 2026-10-17
-tag paint-v1.0.63
-file Paint-1.0.63.lha
+tag amipaint-v1.0.63
+file AmiPaint-1.0.63.lha
 size 1834212              # bytes; checked before unpacking
 sha256 9f2c...e1          # 64 hex digits; checked before unpacking
-drawer Paint              # top-level drawer in the archive
-exe Paint                 # 040 MUI build; the launcher picks exe-020 / exe-gadtools for the machine
+drawer AmiPaint           # top-level drawer in the archive
+exe AmiPaint              # 040 MUI build; the launcher picks exe-020 / exe-gadtools for the machine
 needs os=3.1 cpu=68020 fpu=1 mui=opt rtg=opt
 host none                 # or the AmiStudio Host service the app needs (browser, pdf, ...)
 icon Icons/about.png      # path inside the drawer, used for the icon grid
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/paint-v1.0.63
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.63
 ```
 
 Other keys:
@@ -99,7 +99,7 @@ Nothing is published without Rich's OK. Until then app bots keep building into t
    `$VER: <Exe> <ver> (dd.mm.yyyy)` in every binary.
 2. Dry run in a checkout of this repo (prints the release, SHA256SUMS and the new manifest block; changes nothing):
 
-       tools/publish.sh paint 1.0.64 ../amiga-photocraft-c/dist/Paint-1.0.64.lha --notes /tmp/changes-1.0.64.txt
+       tools/publish.sh amipaint 1.0.64 /workspace/release/AmiPaint-1.0.64.lha --notes /tmp/changes-1.0.64.txt
 
    Options: `--variant amikit FILE`, `--extra FILE` (e.g. a Host tarball), `--beta`.
 3. With Rich's OK, add `--publish`. The script then checks the version is newer than the listed one, creates the

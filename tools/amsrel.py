@@ -24,13 +24,14 @@ def die(msg): print("amsrel: " + msg, file=sys.stderr); sys.exit(1)
 
 def cap(app): return app[:1].upper() + app[1:]
 
-# Suite stays AmiStudio; apps: Paint, AmiSurf, Matrix Chat.
-# ids: paint, amisurf, matrixchat (legacy ids browser/chat still recognised).
-# Archives: Paint-<ver>.lha (Paint's final name pending its bot), AmiSurf-<ver>.lha,
+# Suite stays AmiStudio; apps: AmiPaint, AmiSurf, Matrix Chat.
+# ids: amipaint, amisurf, matrixchat (legacy ids paint/browser/chat still recognised).
+# Archives: AmiPaint-<ver>.lha, AmiSurf-<ver>.lha,
 # MatrixChat-<ver>.lha; launcher AmiStudio-<ver>.lha.
 DISPLAY = {
     "launcher": "AmiStudio",
-    "paint": "Paint",
+    "amipaint": "AmiPaint",
+    "paint": "Paint",           # legacy id (renamed to amipaint)
     "amisurf": "AmiSurf",
     "matrixchat": "Matrix Chat",
     "browser": "AmiSurf",       # legacy id
@@ -38,7 +39,8 @@ DISPLAY = {
 }
 DRAWER = {
     "launcher": "AmiStudio",
-    "paint": "Paint",
+    "amipaint": "AmiPaint",
+    "paint": "Paint",           # legacy id / old drawer
     "amisurf": "AmiSurf",
     "matrixchat": "MatrixChat",
     "browser": "AmiStudioBrowser",  # legacy id / old drawer
