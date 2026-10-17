@@ -23,8 +23,36 @@ class Bad(Exception): pass
 def die(msg): print("amsrel: " + msg, file=sys.stderr); sys.exit(1)
 
 def cap(app): return app[:1].upper() + app[1:]
-def drawer_for(app): return "AmiStudio" if app == "launcher" else "AmiStudio" + cap(app)
-def asset_name(app, ver): return "%s-%s.lha" % (drawer_for(app), ver)
+
+# Suite stays AmiStudio; apps: Paint, AmiSurf, Matrix Chat.
+# ids: paint, amisurf, matrixchat (legacy ids browser/chat still recognised).
+# Archives: Paint-<ver>.lha (Paint's final name pending its bot), AmiSurf-<ver>.lha,
+# MatrixChat-<ver>.lha; launcher AmiStudio-<ver>.lha.
+DISPLAY = {
+    "launcher": "AmiStudio",
+    "paint": "Paint",
+    "amisurf": "AmiSurf",
+    "matrixchat": "Matrix Chat",
+    "browser": "AmiSurf",       # legacy id
+    "chat": "Matrix Chat",      # legacy id
+}
+DRAWER = {
+    "launcher": "AmiStudio",
+    "paint": "Paint",
+    "amisurf": "AmiSurf",
+    "matrixchat": "MatrixChat",
+    "browser": "AmiStudioBrowser",  # legacy id / old drawer
+    "chat": "AmiStudioChat",
+}
+
+def display_name(app):
+    return DISPLAY.get(app, "AmiStudio " + cap(app))
+
+def drawer_for(app):
+    return DRAWER.get(app, "AmiStudio" + cap(app))
+
+def asset_name(app, ver):
+    return "%s-%s.lha" % (drawer_for(app), ver)
 
 def ver_key(v):
     """same order as the launcher's ver_cmp: numeric parts, a text suffix (b2, beta) sorts before the release"""
@@ -200,7 +228,7 @@ def cmd_publish(o):
     a = next((x for x in apps if x["id"] == app), None)
     if a is None:
         if not o.new_app: die("app '%s' is not in manifest.txt; add a placeholder block first (or pass --new-app)" % app)
-        a = {"id": app, "_order": [], "variant": [], "name": "AmiStudio " + cap(app), "drawer": drawer_for(app), "exe": drawer_for(app),
+        a = {"id": app, "_order": [], "variant": [], "name": display_name(app), "drawer": drawer_for(app), "exe": drawer_for(app),
              "needs": "os=3.1 cpu=68020 fpu=1 mui=opt", "host": "none", "icon": "Icons/about.png", "min_launcher": glob.get("launcher_min", "0.1.1")}
         apps.append(a)
     if not is_placeholder(a) and ver_key(ver) <= ver_key(a["ver"]) and not o.allow_same:
@@ -224,8 +252,7 @@ def cmd_publish(o):
     for w in warns: print("warn " + w)
     if errs: die("the new manifest would be invalid:\n  " + "\n  ".join(errs))
     sums = "".join("%s  %s\n" % (sha(f), os.path.basename(f)) for f in files)
-    title = "AmiStudio %s %s" % ("" if app == "launcher" else cap(app), ver)
-    title = re.sub(r"\s+", " ", title)
+    title = display_name(app) + " " + ver
     print("== %s %s -> %s" % (app, ver, tag))
     print("release title: %s%s" % (title, " (pre-release / beta)" if o.beta else ""))
     print("assets:\n" + "".join("  %s\n" % os.path.basename(f) for f in files) + "  SHA256SUMS")
@@ -243,7 +270,7 @@ def cmd_publish(o):
     with tempfile.TemporaryDirectory() as td:
         sp = os.path.join(td, "SHA256SUMS"); open(sp, "w").write(sums)
         np = os.path.join(td, "notes.md")
-        notes = open(o.notes).read() if o.notes else "AmiStudio %s %s.\n" % (cap(app), ver)
+        notes = open(o.notes).read() if o.notes else "%s %s.\n" % (display_name(app), ver)
         open(np, "w").write(notes + "\nInstall with the AmiStudio launcher, or unpack the .lha anywhere and open the drawer.\nSHA-256 sums are in SHA256SUMS.\n")
         args = ["gh", "release", "create", tag, "--repo", REPO, "--title", title, "--notes-file", np, "--target", "main"]
         if o.beta: args.append("--prerelease")
@@ -272,7 +299,7 @@ def main():
     c.add_argument("--sha", action="store_true", help="with --remote: download and compare sha256"); c.add_argument("--app")
     p = sp.add_parser("publish")
     p.add_argument("app"); p.add_argument("ver"); p.add_argument("file")
-    p.add_argument("--variant", nargs=2, action="append", default=[], metavar=("NAME", "FILE"), help="e.g. --variant amikit AmiStudioBrowser-0.79-AmiKit.lha")
+    p.add_argument("--variant", nargs=2, action="append", default=[], metavar=("NAME", "FILE"), help="e.g. --variant amikit AmiSurf-0.79-AmiKit.lha")
     p.add_argument("--extra", action="append", default=[], metavar="FILE", help="extra asset (Host tarball...), listed in SHA256SUMS only")
     p.add_argument("--beta", action="store_true", help="channel beta + GitHub pre-release")
     p.add_argument("--notes", metavar="FILE", help="release body (this version's CHANGES section)")

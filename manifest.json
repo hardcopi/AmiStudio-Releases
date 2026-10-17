@@ -26,11 +26,11 @@
     {
       "id": "paint",
       "placeholder": true,
-      "name": "AmiStudio Paint",
+      "name": "Paint",
       "desc": "Photoshop-class paint program (PhotoCraft based)",
       "status": "soon",
-      "drawer": "AmiStudioPaint",
-      "exe": "AmiStudioPaint",
+      "drawer": "Paint",
+      "exe": "Paint",
       "needs": {
         "os": "3.1",
         "cpu": "68020",
@@ -44,13 +44,13 @@
       "variants": []
     },
     {
-      "id": "browser",
+      "id": "amisurf",
       "placeholder": true,
-      "name": "AmiStudio Browser",
+      "name": "AmiSurf",
       "desc": "Modern web browser; the AmiStudio Host renders pages on a PC",
       "status": "soon",
-      "drawer": "AmiStudioBrowser",
-      "exe": "AmiStudioBrowser",
+      "drawer": "AmiSurf",
+      "exe": "AmiSurf",
       "needs": {
         "os": "3.1",
         "cpu": "68020",
@@ -63,13 +63,13 @@
       "variants": []
     },
     {
-      "id": "chat",
+      "id": "matrixchat",
       "placeholder": true,
-      "name": "AmiStudio Chat",
+      "name": "Matrix Chat",
       "desc": "Matrix chat client with Discord bridging",
       "status": "soon",
-      "drawer": "AmiStudioChat",
-      "exe": "AmiStudioChat",
+      "drawer": "MatrixChat",
+      "exe": "MatrixChat",
       "needs": {
         "os": "3.1",
         "cpu": "68020",
