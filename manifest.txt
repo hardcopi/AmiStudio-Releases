@@ -24,13 +24,20 @@ min_launcher 0.1.1
 app paint
 name Paint
 desc Photoshop-class paint program (PhotoCraft based)
-status soon
+ver 1.0.63
+date 2026-10-17
+tag paint-v1.0.63
+file Paint-1.0.63.lha
+size 3830209
+sha256 9175781683922a637116238b7843691abcce930bde57a956f3aeae6e65a58a9f
+channel beta
 drawer Paint
 exe Paint
 needs os=3.1 cpu=68020 fpu=1 mui=opt rtg=opt
 host none
 icon Icons/about.png
 min_launcher 0.1.1
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/paint-v1.0.63
 
 app amisurf
 name AmiSurf
