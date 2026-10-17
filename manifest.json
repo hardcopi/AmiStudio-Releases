@@ -61,10 +61,16 @@
     },
     {
       "id": "amisurf",
-      "placeholder": true,
+      "placeholder": false,
       "name": "AmiSurf",
       "desc": "Modern web browser; the AmiStudio Host renders pages on a PC",
-      "status": "soon",
+      "ver": "0.82",
+      "date": "2026-10-17",
+      "tag": "amisurf-v0.82",
+      "file": "AmiSurf-0.82.lha",
+      "size": 506588,
+      "sha256": "0e67824dcd0e83251b583a479bee6830b2d3283648088209d7fa95d6096f8595",
+      "channel": "beta",
       "drawer": "AmiSurf",
       "exe": "AmiSurf",
       "needs": {
@@ -76,6 +82,8 @@
       "host": "browser",
       "icon": "Icons/about.png",
       "min_launcher": "0.1.1",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amisurf-v0.82",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amisurf-v0.82/AmiSurf-0.82.lha",
       "variants": []
     },
     {
