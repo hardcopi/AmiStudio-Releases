@@ -4,6 +4,7 @@
   amsrel.py json      [--repo-dir DIR]                 regenerate manifest.json from manifest.txt
   amsrel.py check     [--remote] [--sha] [--app ID]    validate manifest.txt (and the release assets on GitHub)
   amsrel.py publish   APP VER FILE.lha [options]       app bots: dry run unless --publish (needs Rich's OK)
+  amsrel.py publish   host VER amistudio-host-VER-linux-x86_64.tar.gz --component --platform linux-x86_64 ...
 
 The format is documented in README.md ("manifest.txt"). Python 3.8+, no third-party modules.
 Publishing uses the GitHub CLI (`gh`), logged in as an account that may push to hardcopi/AmiStudio-Releases.
@@ -15,7 +16,7 @@ DL = "https://github.com/%s/releases/download" % REPO
 NOTES = "https://github.com/%s/releases/tag" % REPO
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KEYORDER = ["name", "desc", "ver", "date", "tag", "file", "size", "sha256", "channel", "status", "drawer", "exe",
-            "needs", "host", "icon", "min_launcher", "notes", "variant"]
+            "needs", "host", "platform", "icon", "min_launcher", "notes", "variant"]
 MAXBYTES = 32 * 1024
 
 class Bad(Exception): pass
@@ -36,6 +37,7 @@ DISPLAY = {
     "matrixchat": "Matrix Chat",
     "browser": "AmiSurf",       # legacy id
     "chat": "Matrix Chat",      # legacy id
+    "host": "AmiStudio Host",   # PC component (component block)
 }
 DRAWER = {
     "launcher": "AmiStudio",
@@ -55,6 +57,13 @@ def drawer_for(app):
 
 def asset_name(app, ver):
     return "%s-%s.lha" % (drawer_for(app), ver)
+
+# PC-side parts (the AmiStudio Host) are "component" blocks: same keys as an app plus "platform", no Amiga keys.
+# Launchers up to 0.1.3 treat a block that does not start with "app" as ignored global lines, so they never show
+# or download a component (this needs the blank line before "component", which render() always writes).
+def is_component(a): return a.get("_kind") == "component"
+def component_asset(cid, ver, platform):
+    return "amistudio-%s-%s-%s.%s" % (cid, ver, platform, "zip" if platform.startswith("windows") else "tar.gz")
 
 def ver_key(v):
     """same order as the launcher's ver_cmp: numeric parts, a text suffix (b2, beta) sorts before the release"""
@@ -80,8 +89,8 @@ def parse(text):
             continue
         k, _, v = s.partition(" ")
         k, v = k.strip(), v.strip()
-        if k == "app":
-            cur = {"id": v, "_order": [], "variant": []}; apps.append(cur); continue
+        if k in ("app", "component"):
+            cur = {"id": v, "_kind": k, "_order": [], "variant": []}; apps.append(cur); continue
         if cur is None: glob[k] = v; continue
         if k == "variant": cur["variant"].append(v)
         else: cur[k] = v
@@ -96,8 +105,8 @@ def render(head, glob, apps):
         if k in glob: out.append("%s %s" % (k, glob[k]))
     for k, v in glob.items():
         if k not in ("format", "updated", "launcher_min"): out.append("%s %s" % (k, v))
-    for a in apps:
-        out.append(""); out.append("app " + a["id"])
+    for a in [x for x in apps if not is_component(x)] + [x for x in apps if is_component(x)]:   # components last
+        out.append(""); out.append("%s %s" % ("component" if is_component(a) else "app", a["id"]))
         keys = [k for k in KEYORDER if k in a] + [k for k in a if k not in KEYORDER and not k.startswith("_") and k != "id"]
         for k in keys:
             if k == "variant":
@@ -109,7 +118,7 @@ def to_json(glob, apps):
     j = {"format": int(glob.get("format", 0)), "updated": glob.get("updated", ""), "launcher_min": glob.get("launcher_min", ""),
          "generated_from": "manifest.txt", "apps": []}
     for a in apps:
-        e = {"id": a["id"], "placeholder": is_placeholder(a)}
+        e = {"id": a["id"], "kind": "component" if is_component(a) else "app", "placeholder": is_placeholder(a)}
         for k in KEYORDER:
             if k in ("variant",) or k not in a: continue
             e[k] = int(a[k]) if k == "size" else a[k]
@@ -146,7 +155,11 @@ def check(text, glob, apps, remote=False, sha=False, only=None):
         for k in ("drawer", "exe", "file"):
             v = a.get(k, "")
             if v and (not SAFE.match(v) or v == ".."): errs.append(where + "%s '%s' has unsafe characters" % (k, v))
-        if a.get("drawer", drawer_for(i)) != drawer_for(i): warns.append(where + "drawer is not the suite name %s" % drawer_for(i))
+        if is_component(a):
+            if a.get("platform") is None or not re.match(r"^[a-z0-9_]+-[a-z0-9_]+$", a.get("platform", "")): errs.append(where + "component needs 'platform OS-ARCH' (linux-x86_64)")
+            for k in ("drawer", "exe", "icon", "needs", "min_launcher", "format", "updated", "launcher_min"):
+                if k in a: errs.append(where + "component must not have '%s'" % k)
+        elif a.get("drawer", drawer_for(i)) != drawer_for(i): warns.append(where + "drawer is not the suite name %s" % drawer_for(i))
         if is_placeholder(a):
             for k in ("file", "size", "sha256", "tag"):
                 if a.get(k): warns.append(where + "placeholder has '%s' (ignored by the launcher)" % k)
@@ -154,7 +167,8 @@ def check(text, glob, apps, remote=False, sha=False, only=None):
         for k in ("ver", "file", "size", "sha256", "tag"):
             if not a.get(k): errs.append(where + "missing '%s'" % k)
         if a.get("tag") and a.get("ver") and a["tag"] != "%s-v%s" % (i, a["ver"]): errs.append(where + "tag must be %s-v%s" % (i, a["ver"]))
-        if a.get("file") and a.get("ver") and a["file"] != asset_name(i, a["ver"]): warns.append(where + "file is usually %s" % asset_name(i, a["ver"]))
+        want = component_asset(i, a["ver"], a.get("platform", "")) if is_component(a) and a.get("ver") else asset_name(i, a.get("ver", ""))
+        if a.get("file") and a.get("ver") and a["file"] != want: (errs if is_component(a) else warns).append(where + "file %s %s" % ("must be" if is_component(a) else "is usually", want))
         if a.get("sha256") and not re.match(r"^[0-9a-fA-F]{64}$", a["sha256"]): errs.append(where + "sha256 must be 64 hex digits")
         if a.get("size") and not a["size"].isdigit(): errs.append(where + "size must be a byte count")
         if remote and (only is None or only == i) and a.get("tag") and a.get("file"):
@@ -224,10 +238,20 @@ def cmd_publish(o):
     files = [o.file] + [v[1] for v in o.variant] + o.extra
     for f in files:
         if not os.path.isfile(f): die("no such file: %s" % f)
-    want = asset_name(app, ver)
-    if os.path.basename(o.file) != want: die("main archive must be named %s (got %s)" % (want, os.path.basename(o.file)))
     text, (head, glob, apps) = load(d)
     a = next((x for x in apps if x["id"] == app), None)
+    comp = o.component or (a is not None and is_component(a))
+    if a is not None and o.component and not is_component(a): die("%s is an app block, not a component" % app)
+    if comp:
+        platform = o.platform or (a or {}).get("platform")
+        if not platform: die("a component needs --platform (e.g. linux-x86_64)")
+        want = component_asset(app, ver, platform)
+    else: want = asset_name(app, ver)
+    if os.path.basename(o.file) != want: die("main %s must be named %s (got %s)" % ("file" if comp else "archive", want, os.path.basename(o.file)))
+    if a is None and comp:
+        if not o.new_app: die("component '%s' is not in manifest.txt; pass --new-app to add it" % app)
+        a = {"id": app, "_kind": "component", "_order": [], "variant": [], "name": display_name(app), "desc": o.desc or display_name(app), "platform": platform}
+        apps.append(a)
     if a is None:
         if not o.new_app: die("app '%s' is not in manifest.txt; add a placeholder block first (or pass --new-app)" % app)
         a = {"id": app, "_order": [], "variant": [], "name": display_name(app), "drawer": drawer_for(app), "exe": drawer_for(app),
@@ -243,6 +267,8 @@ def cmd_publish(o):
     import datetime
     tag = "%s-v%s" % (app, ver)
     a.pop("status", None)
+    if comp: a["platform"] = platform
+    if o.desc: a["desc"] = o.desc
     a.update({"ver": ver, "date": o.date or datetime.date.today().isoformat(), "tag": tag, "file": want,
               "size": str(os.path.getsize(o.file)), "sha256": sha(o.file), "notes": "%s/%s" % (NOTES, tag)})
     if o.beta: a["channel"] = "beta"
@@ -259,7 +285,7 @@ def cmd_publish(o):
     print("release title: %s%s" % (title, " (pre-release / beta)" if o.beta else ""))
     print("assets:\n" + "".join("  %s\n" % os.path.basename(f) for f in files) + "  SHA256SUMS")
     print("SHA256SUMS:\n" + sums)
-    print("manifest block:\n" + "\n".join(l for l in new_txt.split("\n\n") if l.startswith("app %s\n" % app)) + "\n")
+    print("manifest block:\n" + "\n".join(l for l in new_txt.split("\n\n") if l.startswith("%s %s\n" % ("component" if comp else "app", app))) + "\n")
     if not o.publish:
         print("DRY RUN: nothing was created or pushed. Re-run with --publish once Rich has OK'd this release.")
         return
@@ -273,7 +299,9 @@ def cmd_publish(o):
         sp = os.path.join(td, "SHA256SUMS"); open(sp, "w").write(sums)
         np = os.path.join(td, "notes.md")
         notes = open(o.notes).read() if o.notes else "%s %s.\n" % (display_name(app), ver)
-        open(np, "w").write(notes + "\nInstall with the AmiStudio launcher, or unpack the .lha anywhere and open the drawer.\nSHA-256 sums are in SHA256SUMS.\n")
+        how = ("This runs on the PC, not on the Amiga: unpack it and see README-HOST.md inside.\n" if comp else
+               "Install with the AmiStudio launcher, or unpack the .lha anywhere and open the drawer.\n")
+        open(np, "w").write(notes + "\n" + how + "SHA-256 sums are in SHA256SUMS.\n")
         args = ["gh", "release", "create", tag, "--repo", REPO, "--title", title, "--notes-file", np, "--target", "main"]
         if o.beta: args.append("--prerelease")
         args += ["--latest=false"]
@@ -305,6 +333,8 @@ def main():
     p.add_argument("--extra", action="append", default=[], metavar="FILE", help="extra asset (Host tarball...), listed in SHA256SUMS only")
     p.add_argument("--beta", action="store_true", help="channel beta + GitHub pre-release")
     p.add_argument("--notes", metavar="FILE", help="release body (this version's CHANGES section)")
+    p.add_argument("--component", action="store_true", help="a PC part (Host): 'component' block, file amistudio-ID-VER-PLATFORM.tar.gz")
+    p.add_argument("--platform", help="component platform, e.g. linux-x86_64"); p.add_argument("--desc")
     p.add_argument("--date"); p.add_argument("--new-app", action="store_true"); p.add_argument("--allow-same", action="store_true")
     p.add_argument("--publish", action="store_true", help="really create the GitHub release and push the manifest (Rich's OK needed)")
     o = ap.parse_args()

@@ -6,6 +6,7 @@
   "apps": [
     {
       "id": "launcher",
+      "kind": "app",
       "placeholder": false,
       "name": "AmiStudio",
       "desc": "Installs, updates and starts the AmiStudio apps",
@@ -33,6 +34,7 @@
     },
     {
       "id": "amipaint",
+      "kind": "app",
       "placeholder": false,
       "name": "AmiPaint",
       "desc": "Photoshop-class paint program (PhotoCraft based)",
@@ -61,6 +63,7 @@
     },
     {
       "id": "amisurf",
+      "kind": "app",
       "placeholder": false,
       "name": "AmiSurf",
       "desc": "Modern web browser; the AmiStudio Host renders pages on a PC",
@@ -88,6 +91,7 @@
     },
     {
       "id": "matrixchat",
+      "kind": "app",
       "placeholder": false,
       "name": "Matrix Chat",
       "desc": "Matrix chat client with end-to-end encryption; shows Discord-bridged rooms",

@@ -88,6 +88,24 @@ Other keys:
   is also a placeholder. Launchers from 0.1.1 show it as a grey "coming soon" icon and never try to download it.
   When the first release is published, `tools/publish.sh` removes `status soon` and fills in the release keys.
 
+**PC components** (the AmiStudio Host) use a `component` block instead of `app`, always after the app blocks and
+after a blank line. Launchers skip these blocks (0.1.1-0.1.3 read them as ignored global lines), so the Amiga never
+shows or downloads them; the Host reads its own block for its update check.
+```
+component host
+name AmiStudio Host
+ver 0.1.1
+tag host-v0.1.1
+file amistudio-host-0.1.1-linux-x86_64.tar.gz   # amistudio-<id>-<ver>-<platform>.tar.gz (.zip for windows-*)
+size ...
+sha256 ...
+channel beta
+platform linux-x86_64     # required for components
+```
+A component has no `drawer`, `exe`, `needs`, `icon` or `min_launcher`. Publish one with
+`tools/publish.sh host 0.1.2 amistudio-host-0.1.2-linux-x86_64.tar.gz --component --platform linux-x86_64 --beta`
+(`--new-app` the first time).
+
 `manifest.json` holds the same data for the Host and for desktop tools. It is generated from `manifest.txt` by
 `tools/mkmanifest.sh`; never edit it by hand.
 
