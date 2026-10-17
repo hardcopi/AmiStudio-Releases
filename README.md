@@ -11,10 +11,10 @@ thin **Update** button = newer version available) and installs, updates and roll
 
 | App | id | Status |
 |---|---|---|
-| AmiStudio (launcher) | `launcher` | coming soon |
-| Paint | `paint` | coming soon |
+| AmiStudio (launcher) | `launcher` | 0.1.2 beta |
+| Paint | `paint` | 1.0.63 beta |
 | AmiSurf | `amisurf` | coming soon (needs the AmiStudio Host on a PC) |
-| Matrix Chat | `matrixchat` | coming soon |
+| Matrix Chat | `matrixchat` | 0.1 beta |
 
 The suite name stays **AmiStudio**. App display names are Paint, AmiSurf and Matrix Chat (formerly AmiStudio Paint,
 AmiStudio Browser and AmiStudio Chat).
