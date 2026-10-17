@@ -1,0 +1,51 @@
+# AmiStudio manifest (format 1). The AmiStudio launcher reads this file:
+#   https://raw.githubusercontent.com/hardcopi/AmiStudio-Releases/main/manifest.txt
+# One block per app, blank line between blocks, '#' starts a comment. See README.md.
+# Edit with tools/publish.sh (app bots) and regenerate manifest.json with tools/mkmanifest.sh.
+format 1
+updated 2026-10-17
+launcher_min 0.1.1
+
+app launcher
+name AmiStudio
+desc Installs, updates and starts the AmiStudio apps
+status soon
+drawer AmiStudio
+exe AmiStudio
+needs os=3.1 cpu=68020 fpu=1 mui=opt
+host none
+icon Icons/about.png
+min_launcher 0.1.1
+
+app paint
+name AmiStudio Paint
+desc Photoshop-class paint program (PhotoCraft based)
+status soon
+drawer AmiStudioPaint
+exe AmiStudioPaint
+needs os=3.1 cpu=68020 fpu=1 mui=opt rtg=opt
+host none
+icon Icons/about.png
+min_launcher 0.1.1
+
+app browser
+name AmiStudio Browser
+desc Modern web browser; the AmiStudio Host renders pages on a PC
+status soon
+drawer AmiStudioBrowser
+exe AmiStudioBrowser
+needs os=3.1 cpu=68020 fpu=1 mui=opt
+host browser
+icon Icons/about.png
+min_launcher 0.1.1
+
+app chat
+name AmiStudio Chat
+desc Matrix chat client with Discord bridging
+status soon
+drawer AmiStudioChat
+exe AmiStudioChat
+needs os=3.1 cpu=68020 fpu=1 mui=opt
+host none
+icon Icons/about.png
+min_launcher 0.1.1

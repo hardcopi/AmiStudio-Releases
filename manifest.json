@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "updated": "2026-10-17",
+  "launcher_min": "0.1.1",
+  "generated_from": "manifest.txt",
+  "apps": [
+    {
+      "id": "launcher",
+      "placeholder": true,
+      "name": "AmiStudio",
+      "desc": "Installs, updates and starts the AmiStudio apps",
+      "status": "soon",
+      "drawer": "AmiStudio",
+      "exe": "AmiStudio",
+      "needs": {
+        "os": "3.1",
+        "cpu": "68020",
+        "fpu": "1",
+        "mui": "opt"
+      },
+      "host": "none",
+      "icon": "Icons/about.png",
+      "min_launcher": "0.1.1",
+      "variants": []
+    },
+    {
+      "id": "paint",
+      "placeholder": true,
+      "name": "AmiStudio Paint",
+      "desc": "Photoshop-class paint program (PhotoCraft based)",
+      "status": "soon",
+      "drawer": "AmiStudioPaint",
+      "exe": "AmiStudioPaint",
+      "needs": {
+        "os": "3.1",
+        "cpu": "68020",
+        "fpu": "1",
+        "mui": "opt",
+        "rtg": "opt"
+      },
+      "host": "none",
+      "icon": "Icons/about.png",
+      "min_launcher": "0.1.1",
+      "variants": []
+    },
+    {
+      "id": "browser",
+      "placeholder": true,
+      "name": "AmiStudio Browser",
+      "desc": "Modern web browser; the AmiStudio Host renders pages on a PC",
+      "status": "soon",
+      "drawer": "AmiStudioBrowser",
+      "exe": "AmiStudioBrowser",
+      "needs": {
+        "os": "3.1",
+        "cpu": "68020",
+        "fpu": "1",
+        "mui": "opt"
+      },
+      "host": "browser",
+      "icon": "Icons/about.png",
+      "min_launcher": "0.1.1",
+      "variants": []
+    },
+    {
+      "id": "chat",
+      "placeholder": true,
+      "name": "AmiStudio Chat",
+      "desc": "Matrix chat client with Discord bridging",
+      "status": "soon",
+      "drawer": "AmiStudioChat",
+      "exe": "AmiStudioChat",
+      "needs": {
+        "os": "3.1",
+        "cpu": "68020",
+        "fpu": "1",
+        "mui": "opt"
+      },
+      "host": "none",
+      "icon": "Icons/about.png",
+      "min_launcher": "0.1.1",
+      "variants": []
+    }
+  ]
+}
