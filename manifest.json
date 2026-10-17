@@ -116,6 +116,24 @@
       "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/matrixchat-v0.1",
       "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/matrixchat-v0.1/MatrixChat-0.1.lha",
       "variants": []
+    },
+    {
+      "id": "host",
+      "kind": "component",
+      "placeholder": false,
+      "name": "AmiStudio Host",
+      "desc": "PC service for AmiSurf and later apps (Linux; runs on the PC, not the Amiga)",
+      "ver": "0.1.1",
+      "date": "2026-10-17",
+      "tag": "host-v0.1.1",
+      "file": "amistudio-host-0.1.1-linux-x86_64.tar.gz",
+      "size": 3038522,
+      "sha256": "03c78f661b972b3d115b1bfca38c47798a727f72e2210b5ccb8f80e1f0924bc3",
+      "channel": "beta",
+      "platform": "linux-x86_64",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.1",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/host-v0.1.1/amistudio-host-0.1.1-linux-x86_64.tar.gz",
+      "variants": []
     }
   ]
 }
