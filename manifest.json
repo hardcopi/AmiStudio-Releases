@@ -64,10 +64,16 @@
     },
     {
       "id": "matrixchat",
-      "placeholder": true,
+      "placeholder": false,
       "name": "Matrix Chat",
       "desc": "Matrix chat client with end-to-end encryption; shows Discord-bridged rooms",
-      "status": "soon",
+      "ver": "0.1",
+      "date": "2026-10-17",
+      "tag": "matrixchat-v0.1",
+      "file": "MatrixChat-0.1.lha",
+      "size": 401780,
+      "sha256": "04ac46d50bd560d24afebd80703b7cfaac433744e9ff56a4f25b13e08eb3713e",
+      "channel": "beta",
       "drawer": "MatrixChat",
       "exe": "MatrixChat",
       "needs": {
@@ -79,6 +85,8 @@
       "host": "none",
       "icon": "Icons/about.png",
       "min_launcher": "0.1.1",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/matrixchat-v0.1",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/matrixchat-v0.1/MatrixChat-0.1.lha",
       "variants": []
     }
   ]
