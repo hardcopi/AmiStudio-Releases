@@ -6,10 +6,16 @@
   "apps": [
     {
       "id": "launcher",
-      "placeholder": true,
+      "placeholder": false,
       "name": "AmiStudio",
       "desc": "Installs, updates and starts the AmiStudio apps",
-      "status": "soon",
+      "ver": "0.1.2",
+      "date": "2026-10-17",
+      "tag": "launcher-v0.1.2",
+      "file": "AmiStudio-0.1.2.lha",
+      "size": 243216,
+      "sha256": "5b5743bcceba12c2c9646ee0a6384e7564b710668ecb0b8875ccb88e6906d663",
+      "channel": "beta",
       "drawer": "AmiStudio",
       "exe": "AmiStudio",
       "needs": {
@@ -21,6 +27,8 @@
       "host": "none",
       "icon": "Icons/about.png",
       "min_launcher": "0.1.1",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.2",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/launcher-v0.1.2/AmiStudio-0.1.2.lha",
       "variants": []
     },
     {
