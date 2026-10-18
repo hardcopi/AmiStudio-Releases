@@ -13,12 +13,12 @@ launcher_min 0.1.1
 app launcher
 name AmiStudio
 desc Installs, updates and starts the AmiStudio apps
-ver 0.1.4
+ver 0.1.5
 date 2026-10-17
-tag launcher-v0.1.4
-file AmiStudio-0.1.4.lha
-size 331153
-sha256 0769c538d1295e0f59baf0e1d5ad53d57a82359da69c104a4a12c4a3b008a262
+tag launcher-v0.1.5
+file AmiStudio-0.1.5.lha
+size 393528
+sha256 98f6553ffd7936f97ec4f730995516e1ab7e8dcf4c40a989954492879703b53e
 channel beta
 drawer AmiStudio
 exe AmiStudio
@@ -26,7 +26,7 @@ needs os=3.1 cpu=68020 fpu=1 mui=opt
 host none
 icon Icons/about.png
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.4
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.5
 
 app amipaint
 name AmiPaint
