@@ -15,6 +15,7 @@ thin **Update** button = newer version available) and installs, updates and roll
 | AmiPaint (formerly Paint) | `amipaint` (was `paint`) | 1.0.63 beta |
 | AmiSurf | `amisurf` | 0.82 beta |
 | Matrix Chat | `matrixchat` | 0.1 beta |
+| AmiDiscord | `amidiscord` | 0.0.1 beta (preview; Host service `amidiscord`, falls back to `browser` on Host 0.1.3) |
 | AmiStudio Host (PC component, not for the Amiga) | `host` | 0.1.3 beta, Linux x86_64, includes the Chromium browser engine for AmiSurf (~233 MB) |
 
 The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf and Matrix Chat (formerly Paint / AmiStudio Paint,

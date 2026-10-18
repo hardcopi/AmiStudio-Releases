@@ -118,6 +118,26 @@
       "variants": []
     },
     {
+      "id": "amidiscord",
+      "kind": "app",
+      "placeholder": true,
+      "name": "AmiDiscord",
+      "desc": "Discord for classic Amiga: the official Discord web app via AmiStudio Host, in a native window. Preview: Discord notifications need an upcoming Host update.",
+      "status": "soon",
+      "drawer": "AmiDiscord",
+      "exe": "AmiDiscord",
+      "needs": {
+        "os": "3.1",
+        "cpu": "68020",
+        "fpu": "1",
+        "mui": "opt"
+      },
+      "host": "amidiscord",
+      "icon": "Icons/about.png",
+      "min_launcher": "0.1.1",
+      "variants": []
+    },
+    {
       "id": "host",
       "kind": "component",
       "placeholder": false,
