@@ -11,7 +11,7 @@ thin **Update** button = newer version available) and installs, updates and roll
 
 | App | id | Status |
 |---|---|---|
-| AmiStudio (launcher) | `launcher` | 0.1.3 beta |
+| AmiStudio (launcher) | `launcher` | 0.1.4 beta |
 | AmiPaint (formerly Paint) | `amipaint` (was `paint`) | 1.0.63 beta |
 | AmiSurf | `amisurf` | 0.82 beta |
 | Matrix Chat | `matrixchat` | 0.1 beta |
