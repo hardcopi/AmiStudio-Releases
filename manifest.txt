@@ -32,12 +32,12 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.
 app amipaint
 name AmiPaint
 desc Photoshop-class paint program (PhotoCraft based)
-ver 1.0.64
+ver 1.0.65
 date 2026-10-18
-tag amipaint-v1.0.64
-file AmiPaint-1.0.64.lha
-size 3827188
-sha256 9a95fba7df7c316c24408cf5c0b4894937a1e86b3b575086bd9fdc0b05582da0
+tag amipaint-v1.0.65
+file AmiPaint-1.0.65.lha
+size 3827923
+sha256 83e7946ccab817c6a4140d4daf3ff282b0ce07c2dccb57de15b1933b2c888b27
 channel beta
 drawer AmiPaint
 exe AmiPaint
@@ -45,7 +45,7 @@ needs os=3.1 cpu=68020 fpu=1 mui=opt rtg=opt
 host none
 icon Icons/about.png
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.64
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.65
 
 app amisurf
 name AmiSurf
