@@ -8,7 +8,7 @@
 # Paint-<ver>.lha, id paint), AmiSurf-<ver>.lha, AmiDiscord-<ver>.lha.
 # Matrix Chat (matrixchat-v0.1) is superseded by AmiDiscord and no longer listed.
 format 1
-updated 2026-10-17
+updated 2026-10-18
 launcher_min 0.1.1
 
 app launcher
@@ -87,12 +87,12 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidiscord-v0.
 component host
 name AmiStudio Host
 desc PC service for AmiSurf and AmiDiscord; includes AmiSurf's Chromium browser engine and AmiDiscord's app mode (Linux; runs on the PC, not the Amiga)
-ver 0.1.4
-date 2026-10-17
-tag host-v0.1.4
-file amistudio-host-0.1.4-linux-x86_64.tar.gz
-size 233475444
-sha256 e93263fc196ea307337fcb82504e8a9f7fea31488a3a28545e27dcc5fe4d2462
+ver 0.1.5
+date 2026-10-18
+tag host-v0.1.5
+file amistudio-host-0.1.5-linux-x86_64.tar.gz
+size 233491780
+sha256 57a116d95fceb641144b271cc4b67a1c98f52c068aad8aa9133bdd280fac9015
 channel beta
 platform linux-x86_64
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.4
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.5
