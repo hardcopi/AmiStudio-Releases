@@ -14,7 +14,7 @@ thin **Update** button = newer version available) and installs, updates and roll
 | AmiStudio (launcher) | `launcher` | 0.1.6 beta |
 | AmiPaint (formerly Paint) | `amipaint` (was `paint`) | 1.0.63 beta |
 | AmiSurf | `amisurf` | 0.84 beta |
-| AmiDiscord | `amidiscord` | 0.0.1 beta (preview; Host service `amidiscord`, falls back to `browser` on Host 0.1.3) |
+| AmiDiscord | `amidiscord` | 0.0.3 beta (needs AmiStudio Host 0.1.4+, Host service `amidiscord`) |
 | AmiStudio Host (PC component, not for the Amiga) | `host` | 0.1.5 beta, Linux x86_64, includes the Chromium browser engine for AmiSurf and AmiDiscord app mode (~234 MB) |
 
 The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf and AmiDiscord (AmiPaint and AmiSurf were
