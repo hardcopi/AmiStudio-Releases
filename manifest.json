@@ -131,16 +131,16 @@
       "placeholder": false,
       "name": "AmiStudio Host",
       "desc": "PC service for AmiSurf and AmiDiscord; includes AmiSurf's Chromium browser engine and AmiDiscord's app mode (Linux; runs on the PC, not the Amiga)",
-      "ver": "0.1.6",
+      "ver": "0.1.7",
       "date": "2026-10-18",
-      "tag": "host-v0.1.6",
-      "file": "amistudio-host-0.1.6-linux-x86_64.tar.gz",
-      "size": 233497806,
-      "sha256": "0f5aa54c0f05486986506df8bc4bcf4c5745b89e2deb0eeca001d352e698d865",
+      "tag": "host-v0.1.7",
+      "file": "amistudio-host-0.1.7-linux-x86_64.tar.gz",
+      "size": 233497585,
+      "sha256": "5ffdb4fc86d85d7f9102152e7dd412ea6729ec306c4861b41625cae86fc1d020",
       "channel": "beta",
       "platform": "linux-x86_64",
-      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.6",
-      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/host-v0.1.6/amistudio-host-0.1.6-linux-x86_64.tar.gz",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.7",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/host-v0.1.7/amistudio-host-0.1.7-linux-x86_64.tar.gz",
       "variants": []
     }
   ]
