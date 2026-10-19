@@ -149,6 +149,7 @@
       "host": "amidrive",
       "icon": "Icons/about.png",
       "min_launcher": "0.1.9",
+      "min_host": "0.1.8",
       "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.1",
       "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amidrive-v0.1.1/AmiDrive-0.1.1.lha",
       "variants": []

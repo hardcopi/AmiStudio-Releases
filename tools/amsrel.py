@@ -16,7 +16,7 @@ DL = "https://github.com/%s/releases/download" % REPO
 NOTES = "https://github.com/%s/releases/tag" % REPO
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KEYORDER = ["name", "desc", "ver", "date", "tag", "file", "size", "sha256", "channel", "status", "drawer", "exe",
-            "needs", "host", "platform", "icon", "min_launcher", "notes", "variant"]
+            "needs", "host", "platform", "icon", "min_launcher", "min_host", "notes", "variant"]
 MAXBYTES = 32 * 1024
 
 class Bad(Exception): pass
@@ -154,14 +154,14 @@ def check(text, glob, apps, remote=False, sha=False, only=None):
         if not re.match(r"^[a-z][a-z0-9-]{0,22}$", i): errs.append(where + "id must be lower case a-z0-9-, max 23 chars")
         if i in seen: errs.append(where + "listed twice"); seen.add(i)
         seen.add(i)
-        for k, n in (("name", 63), ("desc", 159), ("drawer", 47), ("exe", 47), ("needs", 95), ("icon", 95), ("notes", 199), ("file", 95), ("tag", 47)):
+        for k, n in (("name", 63), ("desc", 159), ("drawer", 47), ("exe", 47), ("needs", 95), ("icon", 95), ("notes", 199), ("file", 95), ("tag", 47), ("min_host", 15)):
             if len(a.get(k, "")) > n: errs.append(where + "%s longer than %d chars (launcher field size)" % (k, n))
         for k in ("drawer", "exe", "file"):
             v = a.get(k, "")
             if v and (not SAFE.match(v) or v == ".."): errs.append(where + "%s '%s' has unsafe characters" % (k, v))
         if is_component(a):
             if a.get("platform") is None or not re.match(r"^[a-z0-9_]+-[a-z0-9_]+$", a.get("platform", "")): errs.append(where + "component needs 'platform OS-ARCH' (linux-x86_64)")
-            for k in ("drawer", "exe", "icon", "needs", "min_launcher", "format", "updated", "launcher_min"):
+            for k in ("drawer", "exe", "icon", "needs", "min_launcher", "min_host", "format", "updated", "launcher_min"):
                 if k in a: errs.append(where + "component must not have '%s'" % k)
         elif a.get("drawer", drawer_for(i)) != drawer_for(i): warns.append(where + "drawer is not the suite name %s" % drawer_for(i))
         if is_placeholder(a):

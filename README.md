@@ -88,6 +88,10 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.
 Other keys:
 - `channel beta` marks a beta. Launchers only show it with `BETA=ON` (pre-1.0; after 1.0 a separate AmiStudio Beta
   launcher reads betas).
+- `min_host <ver>` (e.g. `min_host 0.1.8` for AmiDrive, whose `amidrive` service came with Host 0.1.8): the oldest
+  AmiStudio Host the app works with. When such an app is installed, updated or started and the Host installed in
+  AmiStudio/Host or the Host that answers is older, the launcher offers "Update the AmiStudio Host now" (download,
+  then the old Host is restarted). Launchers before this key ignore it, like any unknown key.
 - `variant <name> <file> <size> <sha256>` lists an extra archive on the same release (e.g. `amikit`).
 - `status soon` marks a **placeholder**: an announced app with no release yet. A block with neither `ver` nor `file`
   is also a placeholder. Launchers from 0.1.1 show it as a grey "coming soon" icon and never try to download it.
@@ -107,7 +111,7 @@ sha256 ...
 channel beta
 platform linux-x86_64     # required for components
 ```
-A component has no `drawer`, `exe`, `needs`, `icon` or `min_launcher`. Publish one with
+A component has no `drawer`, `exe`, `needs`, `icon`, `min_launcher` or `min_host`. Publish one with
 `tools/publish.sh host 0.1.2 amistudio-host-0.1.2-linux-x86_64.tar.gz --component --platform linux-x86_64 --beta`
 (`--new-app` the first time).
 
