@@ -11,7 +11,7 @@ thin **Update** button = newer version available) and installs, updates and roll
 
 | App | id | Status |
 |---|---|---|
-| AmiStudio (launcher) | `launcher` | [0.1.9 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.9) ([AmiStudio-0.1.9.lha](https://github.com/hardcopi/AmiStudio-Releases/releases/download/launcher-v0.1.9/AmiStudio-0.1.9.lha)): Google Drive with AmiDrive (mounted as AmiStudio/Google Drive while AmiStudio runs, unmounted on quit; needs Host 0.1.8); everything in one drawer since 0.1.8 |
+| AmiStudio (launcher) | `launcher` | [0.1.10 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.10) ([AmiStudio-0.1.10.lha](https://github.com/hardcopi/AmiStudio-Releases/releases/download/launcher-v0.1.10/AmiStudio-0.1.10.lha)): checks the AmiStudio Host and offers its update (Check for updates, and apps with `min_host` such as AmiDrive), then restarts the Host, also one from AmiSurf's AmiKit edition; Google Drive with AmiDrive since 0.1.9 (needs Host 0.1.8) |
 | AmiPaint (formerly Paint) | `amipaint` (was `paint`) | 1.0.66 beta |
 | AmiSurf | `amisurf` | 0.86 beta |
 | AmiDiscord | `amidiscord` | 0.0.3 beta (needs AmiStudio Host 0.1.4+, Host service `amidiscord`) |
