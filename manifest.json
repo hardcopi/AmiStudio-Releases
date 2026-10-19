@@ -126,6 +126,26 @@
       "variants": []
     },
     {
+      "id": "amidrive",
+      "kind": "app",
+      "placeholder": true,
+      "name": "AmiDrive",
+      "desc": "Google Drive for classic Amiga: control panel for the Drive the AmiStudio Host mounts as AmiStudio/Google Drive. Needs AmiStudio 0.1.9 and Host 0.1.8+.",
+      "status": "soon",
+      "drawer": "AmiDrive",
+      "exe": "AmiDrive",
+      "needs": {
+        "os": "3.1",
+        "cpu": "68020",
+        "fpu": "1",
+        "mui": "opt"
+      },
+      "host": "amidrive",
+      "icon": "Icons/about.png",
+      "min_launcher": "0.1.9",
+      "variants": []
+    },
+    {
       "id": "host",
       "kind": "component",
       "placeholder": false,

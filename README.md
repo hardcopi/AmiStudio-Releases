@@ -15,9 +15,10 @@ thin **Update** button = newer version available) and installs, updates and roll
 | AmiPaint (formerly Paint) | `amipaint` (was `paint`) | 1.0.66 beta |
 | AmiSurf | `amisurf` | 0.86 beta |
 | AmiDiscord | `amidiscord` | 0.0.3 beta (needs AmiStudio Host 0.1.4+, Host service `amidiscord`) |
+| AmiDrive | `amidrive` | coming soon (Google Drive control panel; needs AmiStudio 0.1.9 and AmiStudio Host 0.1.8+, Host service `amidrive`) |
 | AmiStudio Host (PC component, not for the Amiga) | `host` | [0.1.8 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.8) ([amistudio-host-0.1.8-linux-x86_64.tar.gz](https://github.com/hardcopi/AmiStudio-Releases/releases/download/host-v0.1.8/amistudio-host-0.1.8-linux-x86_64.tar.gz)), Linux x86_64, includes the AmiSurf 0.85 Chromium browser engine, AmiDiscord app mode and rclone 1.75.2 for Google Drive (service `amidrive`; needs fuse3) (~263 MB); stops on request when AmiStudio 0.1.7+ quits |
 
-The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf and AmiDiscord (AmiPaint and AmiSurf were
+The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf, AmiDiscord and AmiDrive (AmiPaint and AmiSurf were
 formerly Paint / AmiStudio Paint and AmiStudio Browser). Matrix Chat (formerly AmiStudio Chat, release `matrixchat-v0.1`) is
 superseded by AmiDiscord and no longer listed; its release stays for reference.
 
@@ -43,6 +44,8 @@ contains `<App>.info` and the `<App>/` drawer at its top level.
     - AmiPaint: `AmiPaint-<ver>.lha` (id `amipaint`; 1.0.63 was first released as `Paint-1.0.63.lha` under id `paint`,
       tag `paint-v1.0.63`, kept on GitHub but no longer in the manifest)
     - AmiSurf: `AmiSurf-<ver>.lha`
+    - AmiDiscord: `AmiDiscord-<ver>.lha`
+    - AmiDrive: `AmiDrive-<ver>.lha`
     - Matrix Chat: `MatrixChat-<ver>.lha`
     - Launcher: `AmiStudio-<ver>.lha`
   - Optional variants `<Drawer>-<ver>-<Variant>.lha` (AmiSurf's `-AmiKit` build).

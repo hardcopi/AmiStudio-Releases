@@ -3,9 +3,9 @@
 # One block per app, blank line between blocks, '#' starts a comment. See README.md.
 # Edit with tools/publish.sh (app bots) and regenerate manifest.json with tools/mkmanifest.sh.
 #
-# App display names (suite stays AmiStudio): AmiPaint, AmiSurf, AmiDiscord.
-# ids/tags: amipaint, amisurf, amidiscord. Archives: AmiPaint-<ver>.lha (formerly
-# Paint-<ver>.lha, id paint), AmiSurf-<ver>.lha, AmiDiscord-<ver>.lha.
+# App display names (suite stays AmiStudio): AmiPaint, AmiSurf, AmiDiscord, AmiDrive.
+# ids/tags: amipaint, amisurf, amidiscord, amidrive. Archives: AmiPaint-<ver>.lha (formerly
+# Paint-<ver>.lha, id paint), AmiSurf-<ver>.lha, AmiDiscord-<ver>.lha, AmiDrive-<ver>.lha.
 # Matrix Chat (matrixchat-v0.1) is superseded by AmiDiscord and no longer listed.
 format 1
 updated 2026-10-19
@@ -83,6 +83,17 @@ host amidiscord
 icon Icons/about.png
 min_launcher 0.1.1
 notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidiscord-v0.0.3
+
+app amidrive
+name AmiDrive
+desc Google Drive for classic Amiga: control panel for the Drive the AmiStudio Host mounts as AmiStudio/Google Drive. Needs AmiStudio 0.1.9 and Host 0.1.8+.
+status soon
+drawer AmiDrive
+exe AmiDrive
+needs os=3.1 cpu=68020 fpu=1 mui=opt
+host amidrive
+icon Icons/about.png
+min_launcher 0.1.9
 
 component host
 name AmiStudio Host
