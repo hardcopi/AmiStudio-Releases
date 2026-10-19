@@ -11,11 +11,11 @@ thin **Update** button = newer version available) and installs, updates and roll
 
 | App | id | Status |
 |---|---|---|
-| AmiStudio (launcher) | `launcher` | 0.1.8 beta (everything in one drawer: settings, log, apps in AmiStudio/Apps, the Host and its data; moves old ENVARC:AmiStudio settings once) |
+| AmiStudio (launcher) | `launcher` | [0.1.9 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.9) ([AmiStudio-0.1.9.lha](https://github.com/hardcopi/AmiStudio-Releases/releases/download/launcher-v0.1.9/AmiStudio-0.1.9.lha)): Google Drive with AmiDrive (mounted as AmiStudio/Google Drive while AmiStudio runs, unmounted on quit; needs Host 0.1.8); everything in one drawer since 0.1.8 |
 | AmiPaint (formerly Paint) | `amipaint` (was `paint`) | 1.0.66 beta |
 | AmiSurf | `amisurf` | 0.86 beta |
 | AmiDiscord | `amidiscord` | 0.0.3 beta (needs AmiStudio Host 0.1.4+, Host service `amidiscord`) |
-| AmiStudio Host (PC component, not for the Amiga) | `host` | 0.1.7 beta, Linux x86_64, includes the AmiSurf 0.85 Chromium browser engine and AmiDiscord app mode (~234 MB); stops on request when AmiStudio 0.1.7+ quits |
+| AmiStudio Host (PC component, not for the Amiga) | `host` | [0.1.8 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.8) ([amistudio-host-0.1.8-linux-x86_64.tar.gz](https://github.com/hardcopi/AmiStudio-Releases/releases/download/host-v0.1.8/amistudio-host-0.1.8-linux-x86_64.tar.gz)), Linux x86_64, includes the AmiSurf 0.85 Chromium browser engine, AmiDiscord app mode and rclone 1.75.2 for Google Drive (service `amidrive`; needs fuse3) (~263 MB); stops on request when AmiStudio 0.1.7+ quits |
 
 The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf and AmiDiscord (AmiPaint and AmiSurf were
 formerly Paint / AmiStudio Paint and AmiStudio Browser). Matrix Chat (formerly AmiStudio Chat, release `matrixchat-v0.1`) is
