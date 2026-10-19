@@ -13,7 +13,7 @@ thin **Update** button = newer version available) and installs, updates and roll
 |---|---|---|
 | AmiStudio (launcher) | `launcher` | 0.1.8 beta (everything in one drawer: settings, log, apps in AmiStudio/Apps, the Host and its data; moves old ENVARC:AmiStudio settings once) |
 | AmiPaint (formerly Paint) | `amipaint` (was `paint`) | 1.0.66 beta |
-| AmiSurf | `amisurf` | 0.85 beta |
+| AmiSurf | `amisurf` | 0.86 beta |
 | AmiDiscord | `amidiscord` | 0.0.3 beta (needs AmiStudio Host 0.1.4+, Host service `amidiscord`) |
 | AmiStudio Host (PC component, not for the Amiga) | `host` | 0.1.7 beta, Linux x86_64, includes the AmiSurf 0.85 Chromium browser engine and AmiDiscord app mode (~234 MB); stops on request when AmiStudio 0.1.7+ quits |
 
