@@ -141,4 +141,7 @@ downloads every listed asset and compares size and SHA-256.
 
 ## Licence
 
-Not decided yet. Each archive carries its own ReadMe and ATTRIBUTIONS.
+The AmiStudio suite is licensed under the **GNU General Public License v3.0**
+(decision 19 October 2026). Source repositories are being prepared for public release;
+until then, source is available on request. Each archive still carries its own ReadMe
+and ATTRIBUTIONS for third-party components.
