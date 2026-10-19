@@ -86,13 +86,13 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidiscord-v0.
 
 component host
 name AmiStudio Host
-desc PC service for AmiSurf and AmiDiscord; includes AmiSurf's Chromium browser engine and AmiDiscord's app mode (Linux; runs on the PC, not the Amiga)
-ver 0.1.7
-date 2026-10-18
-tag host-v0.1.7
-file amistudio-host-0.1.7-linux-x86_64.tar.gz
-size 233497585
-sha256 5ffdb4fc86d85d7f9102152e7dd412ea6729ec306c4861b41625cae86fc1d020
+desc PC service for AmiSurf, AmiDiscord and AmiDrive: AmiSurf's Chromium engine, AmiDiscord app mode, Google Drive via rclone (Linux; runs on the PC)
+ver 0.1.8
+date 2026-10-19
+tag host-v0.1.8
+file amistudio-host-0.1.8-linux-x86_64.tar.gz
+size 262842608
+sha256 d2e31b5ca25c43409bc90959d335e9db0be4bb140cb1d363e4a6b7bbb3612d58
 channel beta
 platform linux-x86_64
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.7
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.8
