@@ -106,12 +106,12 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.
 component host
 name AmiStudio Host
 desc PC service for AmiSurf, AmiDiscord, AmiDrive: AmiSurf 0.87 engine, Google Drive via rclone 1.75.2 with AmiSurf sign-in (Linux PC; needs fuse3)
-ver 0.1.9
+ver 0.1.10
 date 2026-10-19
-tag host-v0.1.9
-file amistudio-host-0.1.9-linux-x86_64.tar.gz
-size 262846189
-sha256 6180ee29368376ae3fdc35cdb664a583d937e86835c971118f3f28dfb673d8da
+tag host-v0.1.10
+file amistudio-host-0.1.10-linux-x86_64.tar.gz
+size 262785338
+sha256 0ffab1b53219ec1b493865c8035563857eef71468e6811ed3cc70003413c6067
 channel beta
 platform linux-x86_64
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.9
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.10
