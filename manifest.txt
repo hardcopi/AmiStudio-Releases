@@ -87,12 +87,12 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidiscord-v0.
 app amidrive
 name AmiDrive
 desc Google Drive for classic Amiga: control panel for the Drive the AmiStudio Host mounts as AmiStudio/Google Drive. Needs AmiStudio 0.1.9 and Host 0.1.8+.
-ver 0.1.1
+ver 0.1.2
 date 2026-10-19
-tag amidrive-v0.1.1
-file AmiDrive-0.1.1.lha
-size 203174
-sha256 0abc50c54ea5ed24b19ed37478b10ea380fa18c1b7056a8d06f8a9ca93f09e19
+tag amidrive-v0.1.2
+file AmiDrive-0.1.2.lha
+size 218337
+sha256 1abf9ed8bdd5b8469bb78a95d786a8c9776ce6b05bb48887ef4a3699c58e765e
 channel beta
 drawer AmiDrive
 exe AmiDrive
@@ -101,7 +101,7 @@ host amidrive
 icon Icons/about.png
 min_launcher 0.1.9
 min_host 0.1.8
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.1
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.2
 
 component host
 name AmiStudio Host
