@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "launcher_min": "0.1.1",
   "generated_from": "manifest.txt",
   "apps": [
@@ -131,12 +131,12 @@
       "placeholder": false,
       "name": "AmiDrive",
       "desc": "Google Drive for classic Amiga: control panel for the Drive the AmiStudio Host mounts as AmiStudio/Google Drive. Needs AmiStudio 0.1.9 and Host 0.1.8+.",
-      "ver": "0.1.3",
-      "date": "2026-10-19",
-      "tag": "amidrive-v0.1.3",
-      "file": "AmiDrive-0.1.3.lha",
-      "size": 235032,
-      "sha256": "e98296355419a21087408481b31c7479efe86162d29cb7d8a8b55fdad1e235bc",
+      "ver": "0.1.4",
+      "date": "2026-10-20",
+      "tag": "amidrive-v0.1.4",
+      "file": "AmiDrive-0.1.4.lha",
+      "size": 236165,
+      "sha256": "390a89dda5a9a34614da7fd558e7ef15c308bcbb3ff0d25d829647b807b12e37",
       "channel": "beta",
       "drawer": "AmiDrive",
       "exe": "AmiDrive",
@@ -150,8 +150,8 @@
       "icon": "Icons/about.png",
       "min_launcher": "0.1.9",
       "min_host": "0.1.8",
-      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.3",
-      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amidrive-v0.1.3/AmiDrive-0.1.3.lha",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.4",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amidrive-v0.1.4/AmiDrive-0.1.4.lha",
       "variants": []
     },
     {
