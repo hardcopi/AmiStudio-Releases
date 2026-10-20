@@ -17,6 +17,7 @@ thin **Update** button = newer version available) and installs, updates and roll
 | AmiDiscord | `amidiscord` | 0.0.3 beta (needs AmiStudio Host 0.1.4+, Host service `amidiscord`) |
 | AmiDrive | `amidrive` | [0.1.3 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.3) ([AmiDrive-0.1.3.lha](https://github.com/hardcopi/AmiStudio-Releases/releases/download/amidrive-v0.1.3/AmiDrive-0.1.3.lha)): Google Drive control panel; Open drawer works with Directory Opus Magellan (AmiKit), Workbench 3.5+, Scalos and C:WBRun/C:Open; sign-in in AmiSurf (with a Host that has AmiSurf sign-in; older Hosts use the PC's browser), says why when there is no Host and starts the Host on AmiKit (needs AmiStudio 0.1.9 and AmiStudio Host 0.1.8+, Host service `amidrive`) |
 | AmiStudio Host (PC component, not for the Amiga) | `host` | [0.1.11 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.11) ([amistudio-host-0.1.11-linux-x86_64.tar.gz](https://github.com/hardcopi/AmiStudio-Releases/releases/download/host-v0.1.11/amistudio-host-0.1.11-linux-x86_64.tar.gz)), Linux x86_64, includes the AmiSurf 0.88 Chromium browser engine (hand pointer, steady cursor, bookmarks bar Edit/Hide, site icons), AmiDiscord app mode and rclone 1.75.2 for Google Drive (service `amidrive`; needs fuse3); Google sign-in in AmiSurf for AmiDrive 0.1.2+; Sign-in crash fix on Fedora 44 / Nobara since 0.1.10 (~263 MB); stops on request when AmiStudio 0.1.7+ quits |
+| AmiStudio Host for macOS (alpha, not in the manifest) | `host` | [0.1.11 alpha 1](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-macos-v0.1.11-alpha.1): Apple Silicon, Intel and universal tarballs for Amiberry / AmiKit on a Mac; AmiSurf engine and AmiDiscord, no Google Drive yet; manual install (`sh run-host.sh`), not yet tested on a real Mac |
 
 The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf, AmiDiscord and AmiDrive (AmiPaint and AmiSurf were
 formerly Paint / AmiStudio Paint and AmiStudio Browser). Matrix Chat (formerly AmiStudio Chat, release `matrixchat-v0.1`) is
@@ -49,7 +50,7 @@ contains `<App>.info` and the `<App>/` drawer at its top level.
     - Matrix Chat: `MatrixChat-<ver>.lha`
     - Launcher: `AmiStudio-<ver>.lha`
   - Optional variants `<Drawer>-<ver>-<Variant>.lha` (AmiSurf's `-AmiKit` build).
-  - Host parts: `amistudio-host-<ver>-linux-x86_64.tar.gz` (later `-windows-x64.zip`).
+  - Host parts: `amistudio-host-<ver>-linux-x86_64.tar.gz`, `amistudio-host-<ver>-macos-{arm64,x86_64,universal}.tar.gz` (alpha, tag `host-macos-v<ver>-alpha.N`, not in the manifest yet; later `-windows-x64.zip`).
   - `SHA256SUMS` on every release: one `sha256  filename` line per asset (`sha256sum -c SHA256SUMS` checks them).
 - Download URL: `https://github.com/hardcopi/AmiStudio-Releases/releases/download/<tag>/<file>`
 
