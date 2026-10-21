@@ -3,9 +3,9 @@
 # One block per app, blank line between blocks, '#' starts a comment. See README.md.
 # Edit with tools/publish.sh (app bots) and regenerate manifest.json with tools/mkmanifest.sh.
 #
-# App display names (suite stays AmiStudio): AmiPaint, AmiSurf, AmiDiscord, AmiDrive.
-# ids/tags: amipaint, amisurf, amidiscord, amidrive. Archives: AmiPaint-<ver>.lha (formerly
-# Paint-<ver>.lha, id paint), AmiSurf-<ver>.lha, AmiDiscord-<ver>.lha, AmiDrive-<ver>.lha.
+# App display names (suite stays AmiStudio): AmiPaint, AmiSurf, AmiDiscord, AmiDrive, AmiWrite.
+# ids/tags: amipaint, amisurf, amidiscord, amidrive, amiwrite. Archives: AmiPaint-<ver>.lha (formerly
+# Paint-<ver>.lha, id paint), AmiSurf-<ver>.lha, AmiDiscord-<ver>.lha, AmiDrive-<ver>.lha, AmiWrite-<ver>.lha.
 # Matrix Chat (matrixchat-v0.1) is superseded by AmiDiscord and no longer listed.
 format 1
 updated 2026-10-21
@@ -102,6 +102,16 @@ icon Icons/about.png
 min_launcher 0.1.9
 min_host 0.1.8
 notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.5
+
+app amiwrite
+name AmiWrite
+desc Word processor (WordCraft based); early beta: plain-text editing and .txt files
+status soon
+drawer AmiWrite
+exe AmiWrite
+needs os=3.1 cpu=68020 fpu=1 mui=opt
+host none
+min_launcher 0.1.1
 
 component host
 name AmiStudio Host

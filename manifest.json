@@ -155,6 +155,25 @@
       "variants": []
     },
     {
+      "id": "amiwrite",
+      "kind": "app",
+      "placeholder": true,
+      "name": "AmiWrite",
+      "desc": "Word processor (WordCraft based); early beta: plain-text editing and .txt files",
+      "status": "soon",
+      "drawer": "AmiWrite",
+      "exe": "AmiWrite",
+      "needs": {
+        "os": "3.1",
+        "cpu": "68020",
+        "fpu": "1",
+        "mui": "opt"
+      },
+      "host": "none",
+      "min_launcher": "0.1.1",
+      "variants": []
+    },
+    {
       "id": "host",
       "kind": "component",
       "placeholder": false,
