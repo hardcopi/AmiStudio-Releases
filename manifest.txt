@@ -122,13 +122,13 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.
 
 component host
 name AmiStudio Host
-desc PC service for AmiSurf, AmiDiscord, AmiDrive: AmiSurf 0.88 engine, Google Drive via rclone 1.75.2 with AmiSurf sign-in (Linux PC; needs fuse3)
-ver 0.1.11
-date 2026-10-20
-tag host-v0.1.11
-file amistudio-host-0.1.11-linux-x86_64.tar.gz
-size 262796409
-sha256 11b30d4df852d5ab46b47e25e95b7e828fb5da055ed53834b3ce798bdc1a4ee9
+desc PC service for AmiSurf, AmiDiscord, AmiDrive: AmiSurf 0.90 engine, Google Drive via rclone 1.75.2 with AmiSurf sign-in (Linux PC; needs fuse3)
+ver 0.1.12
+date 2026-10-21
+tag host-v0.1.12
+file amistudio-host-0.1.12-linux-x86_64.tar.gz
+size 262791719
+sha256 3a083c4478f65f2d63330e1f3cf91c26d4a99a14a89036e4dd35a5a33409b517
 channel beta
 platform linux-x86_64
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.11
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.12
