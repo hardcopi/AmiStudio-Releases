@@ -16,10 +16,11 @@ thin **Update** button = newer version available) and installs, updates and roll
 | AmiSurf | `amisurf` | [0.90 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amisurf-v0.90) ([AmiSurf-0.90.lha](https://github.com/hardcopi/AmiStudio-Releases/releases/download/amisurf-v0.90/AmiSurf-0.90.lha), AmiKit edition [AmiSurf-0.90-AmiKit.lha](https://github.com/hardcopi/AmiStudio-Releases/releases/download/amisurf-v0.90/AmiSurf-0.90-AmiKit.lha) with Host 0.1.7 + the 0.90 engine, ~249 MB): zoom in/out shows the chosen step, text cursor follows every click (bookmark editor, page fields), bookmarks bar right-click Move left/right, Save page as PNG/HTML/PDF removed (they saved on the PC), Settings window regrouped (Pages / Window / AmiStudio Host). The zoom, cursor and Move fixes need the 0.90 engine (the AmiKit edition; a Host with the 0.90 engine). 0.89: Illegal instruction Guru fix with sound on; Shell/launcher arguments; tooltypes on Shell and launcher starts |
 | AmiDiscord | `amidiscord` | 0.0.3 beta (needs AmiStudio Host 0.1.4+, Host service `amidiscord`) |
 | AmiDrive | `amidrive` | [0.1.3 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.3) ([AmiDrive-0.1.3.lha](https://github.com/hardcopi/AmiStudio-Releases/releases/download/amidrive-v0.1.3/AmiDrive-0.1.3.lha)): Google Drive control panel; Open drawer works with Directory Opus Magellan (AmiKit), Workbench 3.5+, Scalos and C:WBRun/C:Open; sign-in in AmiSurf (with a Host that has AmiSurf sign-in; older Hosts use the PC's browser), says why when there is no Host and starts the Host on AmiKit (needs AmiStudio 0.1.9 and AmiStudio Host 0.1.8+, Host service `amidrive`) |
+| AmiWrite | `amiwrite` | [0.1.0 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.0) ([AmiWrite-0.1.0.lha](https://github.com/hardcopi/AmiStudio-Releases/releases/download/amiwrite-v0.1.0/AmiWrite-0.1.0.lha)): word processor, based on WordCraft by the ArtCraft team; early beta that edits plain text and opens/saves .txt (no formatting, .docx, pages or printing yet); no icons yet (no .info files in the archive); OS 3.1+, 68020/030 or 68040/060 with FPU, MUI optional |
 | AmiStudio Host (PC component, not for the Amiga) | `host` | [0.1.11 beta](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-v0.1.11) ([amistudio-host-0.1.11-linux-x86_64.tar.gz](https://github.com/hardcopi/AmiStudio-Releases/releases/download/host-v0.1.11/amistudio-host-0.1.11-linux-x86_64.tar.gz)), Linux x86_64, includes the AmiSurf 0.88 Chromium browser engine (hand pointer, steady cursor, bookmarks bar Edit/Hide, site icons), AmiDiscord app mode and rclone 1.75.2 for Google Drive (service `amidrive`; needs fuse3); Google sign-in in AmiSurf for AmiDrive 0.1.2+; Sign-in crash fix on Fedora 44 / Nobara since 0.1.10 (~263 MB); stops on request when AmiStudio 0.1.7+ quits |
 | AmiStudio Host for macOS (alpha, not in the manifest) | `host` | [0.1.11 alpha 1](https://github.com/hardcopi/AmiStudio-Releases/releases/tag/host-macos-v0.1.11-alpha.1): Apple Silicon, Intel and universal tarballs for Amiberry / AmiKit on a Mac; AmiSurf engine and AmiDiscord, no Google Drive yet; manual install (`sh run-host.sh`), not yet tested on a real Mac |
 
-The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf, AmiDiscord and AmiDrive (AmiPaint and AmiSurf were
+The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf, AmiDiscord, AmiDrive and AmiWrite (AmiPaint and AmiSurf were
 formerly Paint / AmiStudio Paint and AmiStudio Browser). Matrix Chat (formerly AmiStudio Chat, release `matrixchat-v0.1`) is
 superseded by AmiDiscord and no longer listed; its release stays for reference.
 
@@ -32,7 +33,7 @@ Everything is under [Releases](https://github.com/hardcopi/AmiStudio-Releases/re
 does not mean much here, because several apps share this repo: **`manifest.txt` decides what is current.**
 
 To install by hand, unpack an archive anywhere with `lha x <App>-<ver>.lha` and open the drawer. Every archive
-contains `<App>.info` and the `<App>/` drawer at its top level.
+contains `<App>.info` and the `<App>/` drawer at its top level (AmiWrite 0.1.0 has no icons yet, so only the drawer).
 
 ## Tags and asset names
 
@@ -47,6 +48,7 @@ contains `<App>.info` and the `<App>/` drawer at its top level.
     - AmiSurf: `AmiSurf-<ver>.lha`
     - AmiDiscord: `AmiDiscord-<ver>.lha`
     - AmiDrive: `AmiDrive-<ver>.lha`
+    - AmiWrite: `AmiWrite-<ver>.lha`
     - Matrix Chat: `MatrixChat-<ver>.lha`
     - Launcher: `AmiStudio-<ver>.lha`
   - Optional variants `<Drawer>-<ver>-<Variant>.lha` (AmiSurf's `-AmiKit` build).
