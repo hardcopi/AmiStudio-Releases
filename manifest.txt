@@ -123,13 +123,13 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.
 
 app amigrid
 name AmiGrid
-desc Spreadsheet (GridCraft based); beta: 254 functions, number formats, recalculation, CSV open and save
-ver 0.0.3
+desc Spreadsheet (GridCraft based); beta: opens .xlsx workbooks (all sheets), 254 functions, number formats, recalculation, CSV open and save
+ver 0.0.4
 date 2026-10-22
-tag amigrid-v0.0.3
-file AmiGrid-0.0.3.lha
-size 590974
-sha256 40c994064d481694c04a912e80a99641fee1cf725bc15795f33f56315d507b7b
+tag amigrid-v0.0.4
+file AmiGrid-0.0.4.lha
+size 706957
+sha256 2185612257263b95ced6e1e5470335dc70be06f12c63c201e3d4cfb311497fe7
 channel beta
 drawer AmiGrid
 exe AmiGrid
@@ -137,7 +137,7 @@ needs os=3.1 cpu=68020 fpu=1 mui=opt
 host none
 icon Icons/about.png
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amigrid-v0.0.3
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amigrid-v0.0.4
 
 component host
 name AmiStudio Host
