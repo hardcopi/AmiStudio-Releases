@@ -106,20 +106,20 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.
 
 app amiwrite
 name AmiWrite
-desc text editing, .txt and .wcraft.json, formatting, galley view with the bundled fonts
-ver 0.1.5
+desc Opens .docx files (headings, bold/italic, fonts, colours, styles)
+ver 0.1.6
 date 2026-10-22
-tag amiwrite-v0.1.5
-file AmiWrite-0.1.5.lha
-size 2534846
-sha256 7886fa536bd9e34fb1f4948fe38ec74fcd7cac86af00924ab881bf855cd85632
+tag amiwrite-v0.1.6
+file AmiWrite-0.1.6.lha
+size 2661217
+sha256 2f2a2c2aa8c21f70ff710e91730c6c5175b1e8c7c9ae6565cfad584c02373d76
 channel beta
 drawer AmiWrite
 exe AmiWrite
 needs os=3.1 cpu=68020 fpu=1 mui=opt
 host none
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.5
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.6
 
 app amigrid
 name AmiGrid
