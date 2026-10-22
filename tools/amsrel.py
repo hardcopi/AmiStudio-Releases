@@ -38,6 +38,7 @@ DISPLAY = {
     "amidiscord": "AmiDiscord",
     "amidrive": "AmiDrive",
     "amiwrite": "AmiWrite",
+    "amigrid": "AmiGrid",
     "browser": "AmiSurf",       # legacy id
     "chat": "Matrix Chat",      # legacy id
     "host": "AmiStudio Host",   # PC component (component block)
@@ -51,6 +52,7 @@ DRAWER = {
     "amidiscord": "AmiDiscord",
     "amidrive": "AmiDrive",
     "amiwrite": "AmiWrite",
+    "amigrid": "AmiGrid",
     "browser": "AmiStudioBrowser",  # legacy id / old drawer
     "chat": "AmiStudioChat",
 }

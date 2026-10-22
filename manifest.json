@@ -182,6 +182,25 @@
       "variants": []
     },
     {
+      "id": "amigrid",
+      "kind": "app",
+      "placeholder": true,
+      "name": "AmiGrid",
+      "desc": "Spreadsheet (GridCraft based)",
+      "status": "soon",
+      "drawer": "AmiGrid",
+      "exe": "AmiGrid",
+      "needs": {
+        "os": "3.1",
+        "cpu": "68020",
+        "fpu": "1",
+        "mui": "opt"
+      },
+      "host": "none",
+      "min_launcher": "0.1.1",
+      "variants": []
+    },
+    {
       "id": "host",
       "kind": "component",
       "placeholder": false,
