@@ -8,18 +8,18 @@
 # Paint-<ver>.lha, id paint), AmiSurf-<ver>.lha, AmiDiscord-<ver>.lha, AmiDrive-<ver>.lha, AmiWrite-<ver>.lha.
 # Matrix Chat (matrixchat-v0.1) is superseded by AmiDiscord and no longer listed.
 format 1
-updated 2026-10-21
+updated 2026-10-22
 launcher_min 0.1.1
 
 app launcher
 name AmiStudio
 desc Installs, updates and starts the AmiStudio apps
-ver 0.1.12
-date 2026-10-21
-tag launcher-v0.1.12
-file AmiStudio-0.1.12.lha
-size 484359
-sha256 11761c52a997348861f0b2a2ccb21080bf85d0cfa72508a85976411f8ff7b683
+ver 0.1.13
+date 2026-10-22
+tag launcher-v0.1.13
+file AmiStudio-0.1.13.lha
+size 485929
+sha256 3450af765dca9a5303ea1d7516156607dd8b5717768cb865e9f767b1bf57cc58
 channel beta
 drawer AmiStudio
 exe AmiStudio
@@ -27,7 +27,7 @@ needs os=3.1 cpu=68020 fpu=1 mui=opt
 host none
 icon Icons/about.png
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.12
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.13
 
 app amipaint
 name AmiPaint
