@@ -135,6 +135,7 @@ drawer AmiGrid
 exe AmiGrid
 needs os=3.1 cpu=68020 fpu=1 mui=opt
 host none
+icon Icons/about.png
 min_launcher 0.1.1
 notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amigrid-v0.0.1
 

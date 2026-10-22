@@ -203,6 +203,7 @@
         "mui": "opt"
       },
       "host": "none",
+      "icon": "Icons/about.png",
       "min_launcher": "0.1.1",
       "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amigrid-v0.0.1",
       "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amigrid-v0.0.1/AmiGrid-0.0.1.lha",
