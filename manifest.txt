@@ -106,19 +106,19 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.
 app amiwrite
 name AmiWrite
 desc Word processor (WordCraft based); early beta: plain-text editing and .txt files
-ver 0.1.1
+ver 0.1.2
 date 2026-10-21
-tag amiwrite-v0.1.1
-file AmiWrite-0.1.1.lha
-size 276556
-sha256 76a6f8ca43f9adfbbbcf0956c064ba909275d88114d0853171a36a4082ebee27
+tag amiwrite-v0.1.2
+file AmiWrite-0.1.2.lha
+size 281429
+sha256 746c8b03664feabf4369ba94ac62e3137cd65fad33d6751dadbd1395687211e7
 channel beta
 drawer AmiWrite
 exe AmiWrite
 needs os=3.1 cpu=68020 fpu=1 mui=opt
 host none
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.1
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.2
 
 component host
 name AmiStudio Host
