@@ -60,7 +60,7 @@ sha256 3f0871f3d710bf37a1b73a7eedd270e1973dc28b3add3a7f8db3ac13550c42ea
 channel beta
 drawer AmiSurf
 exe AmiSurf
-needs os=3.1 cpu=68020 fpu=1 mui=opt
+needs os=3.1 cpu=68020 fpu=1 mui=1
 host browser
 icon Icons/about.png
 min_launcher 0.1.1

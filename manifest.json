@@ -80,7 +80,7 @@
         "os": "3.1",
         "cpu": "68020",
         "fpu": "1",
-        "mui": "opt"
+        "mui": "1"
       },
       "host": "browser",
       "icon": "Icons/about.png",

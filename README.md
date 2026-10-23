@@ -82,8 +82,8 @@ file AmiPaint-1.0.63.lha
 size 1834212              # bytes; checked before unpacking
 sha256 9f2c...e1          # 64 hex digits; checked before unpacking
 drawer AmiPaint           # top-level drawer in the archive
-exe AmiPaint              # 040 MUI build; the launcher picks exe-020 / exe-gadtools for the machine
-needs os=3.1 cpu=68020 fpu=1 mui=opt rtg=opt
+exe AmiPaint              # the one 68020+FPU MUI build; launchers before 0.1.17 (and older apps) also use exe-020 / exe-gadtools
+needs os=3.1 cpu=68020 fpu=1 mui=1 rtg=opt   # single build (22.10.2026): MUI required; publish.sh writes this, --needs overrides
 host none                 # or the AmiStudio Host service the app needs (browser, pdf, ...)
 icon Icons/about.png      # path inside the drawer, used for the icon grid
 min_launcher 0.1.1

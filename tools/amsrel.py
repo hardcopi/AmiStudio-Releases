@@ -239,6 +239,19 @@ def cmd_check(o):
 def sh(args, **kw):
     print("  $ " + " ".join(args)); return subprocess.run(args, check=True, **kw)
 
+# One build per app since 22.10.2026 (Rich: "Drop 040 and Gadtools versions. You can drop the 020 name. Require an
+# FPU though."): <exe> is a 68020 + hard FPU MUI program. Every app release writes that needs line; other keys an app
+# had (rtg=opt for AmiPaint, a newer os=) are kept. --needs "..." overrides it.
+SINGLE_BUILD = (("os", "3.1"), ("cpu", "68020"), ("fpu", "1"), ("mui", "1"))
+def single_build_needs(old):
+    have = [p.split("=", 1) for p in (old or "").split() if "=" in p]
+    d = dict(have); out = []
+    for k, v in SINGLE_BUILD:
+        if k == "os" and d.get("os"): v = d["os"]
+        out.append("%s=%s" % (k, v))
+    out += ["%s=%s" % (k, v) for k, v in have if k not in dict(SINGLE_BUILD)]
+    return " ".join(out)
+
 def cmd_publish(o):
     d = o.repo_dir; app, ver = o.app, o.ver
     if not re.match(r"^[a-z][a-z0-9-]*$", app): die("app id must be lower case")
@@ -263,7 +276,7 @@ def cmd_publish(o):
     if a is None:
         if not o.new_app: die("app '%s' is not in manifest.txt; add a placeholder block first (or pass --new-app)" % app)
         a = {"id": app, "_order": [], "variant": [], "name": display_name(app), "drawer": drawer_for(app), "exe": drawer_for(app),
-             "needs": "os=3.1 cpu=68020 fpu=1 mui=opt", "host": "none", "icon": "Icons/about.png", "min_launcher": glob.get("launcher_min", "0.1.1")}
+             "needs": single_build_needs(""), "host": "none", "icon": "Icons/about.png", "min_launcher": glob.get("launcher_min", "0.1.1")}
         apps.append(a)
     if not is_placeholder(a) and ver_key(ver) <= ver_key(a["ver"]) and not o.allow_same:
         die("%s %s is not newer than the listed %s" % (app, ver, a["ver"]))
@@ -276,6 +289,7 @@ def cmd_publish(o):
     tag = "%s-v%s" % (app, ver)
     a.pop("status", None)
     if comp: a["platform"] = platform
+    else: a["needs"] = o.needs if o.needs else single_build_needs(a.get("needs", ""))   # MUI required, no GadTools build
     if o.desc: a["desc"] = o.desc
     a.update({"ver": ver, "date": o.date or datetime.date.today().isoformat(), "tag": tag, "file": want,
               "size": str(os.path.getsize(o.file)), "sha256": sha(o.file), "notes": "%s/%s" % (NOTES, tag)})
@@ -343,6 +357,7 @@ def main():
     p.add_argument("--notes", metavar="FILE", help="release body (this version's CHANGES section)")
     p.add_argument("--component", action="store_true", help="a PC part (Host): 'component' block, file amistudio-ID-VER-PLATFORM.tar.gz")
     p.add_argument("--platform", help="component platform, e.g. linux-x86_64"); p.add_argument("--desc")
+    p.add_argument("--needs", help='app needs line (default: the single-build "os=3.1 cpu=68020 fpu=1 mui=1", other keys kept)')
     p.add_argument("--date"); p.add_argument("--new-app", action="store_true"); p.add_argument("--allow-same", action="store_true")
     p.add_argument("--publish", action="store_true", help="really create the GitHub release and push the manifest (Rich's OK needed)")
     o = ap.parse_args()
