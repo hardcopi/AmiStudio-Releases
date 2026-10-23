@@ -84,7 +84,7 @@
       },
       "host": "browser",
       "icon": "Icons/about.png",
-      "min_launcher": "0.1.1",
+      "min_launcher": "0.1.17",
       "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amisurf-v0.93",
       "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amisurf-v0.93/AmiSurf-0.93.lha",
       "variants": [
