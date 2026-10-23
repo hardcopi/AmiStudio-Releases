@@ -8,6 +8,8 @@
 # Paint-<ver>.lha, id paint), AmiSurf-<ver>.lha, AmiDiscord-<ver>.lha, AmiDrive-<ver>.lha, AmiWrite-<ver>.lha,
 # AmiGrid-<ver>.lha.
 # Matrix Chat (matrixchat-v0.1) is superseded by AmiDiscord and no longer listed.
+# Hidden for now (Rich, 23 Oct 2026): AmiDrive, AmiWrite and AmiGrid. Their unchanged blocks are in manifest-hidden.txt;
+# restore with: python3 tools/amsrel.py unhide amidrive amiwrite amigrid
 format 1
 updated 2026-10-23
 launcher_min 0.1.1
@@ -84,60 +86,6 @@ host amidiscord
 icon Icons/about.png
 min_launcher 0.1.1
 notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidiscord-v0.0.6
-
-app amidrive
-name AmiDrive
-desc Google Drive for classic Amiga: control panel for the Drive the AmiStudio Host mounts as AmiStudio/Google Drive. Needs AmiStudio 0.1.9 and Host 0.1.8+.
-ver 0.1.7
-date 2026-10-22
-tag amidrive-v0.1.7
-file AmiDrive-0.1.7.lha
-size 247942
-sha256 2455c72d89f3bbca283eb9bc21f12c14fc88a9907971b36167317c2075a8ad65
-channel beta
-drawer AmiDrive
-exe AmiDrive
-needs os=3.1 cpu=68020 fpu=1 mui=opt
-host amidrive
-icon Icons/about.png
-min_launcher 0.1.9
-min_host 0.1.8
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidrive-v0.1.7
-
-app amiwrite
-name AmiWrite
-desc Tables, Galley view by default, faster typing
-ver 0.1.10
-date 2026-10-22
-tag amiwrite-v0.1.10
-file AmiWrite-0.1.10.lha
-size 3179813
-sha256 6b920168c38bf2d3876dd02823dbdd1767e8e7c09c6e6b7370dd82f22006a0b2
-channel beta
-drawer AmiWrite
-exe AmiWrite
-needs os=3.1 cpu=68020 fpu=1 mui=opt
-host none
-min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.10
-
-app amigrid
-name AmiGrid
-desc Spreadsheet (GridCraft based); beta: opens and saves .xlsx workbooks (all sheets), 254 functions, number formats, recalculation, CSV open and save
-ver 0.0.5
-date 2026-10-22
-tag amigrid-v0.0.5
-file AmiGrid-0.0.5.lha
-size 880943
-sha256 fd2bcb55eadccc1637f9f48e3f7cc5f25b27e131ff10ee68fcfb873923c1f31b
-channel beta
-drawer AmiGrid
-exe AmiGrid
-needs os=3.1 cpu=68020 fpu=1 mui=opt
-host none
-icon Icons/about.png
-min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amigrid-v0.0.5
 
 component host
 name AmiStudio Host

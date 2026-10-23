@@ -4,6 +4,7 @@
   amsrel.py json      [--repo-dir DIR]                 regenerate manifest.json from manifest.txt
   amsrel.py check     [--remote] [--sha] [--app ID]    validate manifest.txt (and the release assets on GitHub)
   amsrel.py publish   APP VER FILE.lha [options]       app bots: dry run unless --publish (needs Rich's OK)
+  amsrel.py unhide    ID... | --all                    move hidden app blocks from manifest-hidden.txt back into manifest.txt
   amsrel.py publish   host VER amistudio-host-VER-linux-x86_64.tar.gz --component --platform linux-x86_64 ...
 
 The format is documented in README.md ("manifest.txt"). Python 3.8+, no third-party modules.
@@ -216,6 +217,39 @@ def write_all(d, head, glob, apps):
     with open(os.path.join(d, "manifest.json"), "w", newline="\n") as f: f.write(to_json(glob, apps))
     return txt
 
+# ---------- hidden apps (manifest-hidden.txt) ----------
+# Rich, 23 Oct 2026: "Hide AmiWord, AmiGrid and AmiDrive from the menu for now." Hidden app blocks live, unchanged, in
+# manifest-hidden.txt (same format, never read by the launcher). publish refuses them; "unhide" moves them back.
+HIDDEN = "manifest-hidden.txt"
+def load_hidden(d):
+    p = os.path.join(d, HIDDEN)
+    if not os.path.exists(p): return None, [], []
+    with open(p, newline="") as f: text = f.read()
+    head, _, apps = parse(text)
+    return text, head, apps
+
+def cmd_unhide(o):
+    d = o.repo_dir
+    htext, hhead, happs = load_hidden(d)
+    if htext is None: die("no %s" % HIDDEN)
+    ids = [a["id"] for a in happs] if o.all else o.ids
+    if not ids: die("name the apps to unhide (or --all)")
+    text, (head, glob, apps) = load(d)
+    for i in ids:
+        a = next((x for x in happs if x["id"] == i), None)
+        if a is None: die("%s is not in %s" % (i, HIDDEN))
+        if any(x["id"] == i for x in apps): die("%s is already in manifest.txt" % i)
+        at = next((k for k, x in enumerate(apps) if is_component(x)), len(apps))   # apps before components, as render() writes
+        apps.insert(at, a); happs.remove(a)
+    if not happs: head = [l for l in head if not l.startswith(("# Hidden for now (Rich", "# restore with: python3 tools/amsrel.py unhide"))]
+    write_all(d, head, glob, apps)
+    # keep the hidden file's own header; drop the moved blocks (or the whole file when it is empty)
+    blocks = [b for b in htext.split("\n\n") if not any(b.startswith("app %s\n" % i) for i in ids)]
+    rest = "\n\n".join(blocks).rstrip("\n") + "\n"
+    if happs: open(os.path.join(d, HIDDEN), "w", newline="\n").write(rest)
+    else: os.remove(os.path.join(d, HIDDEN))
+    print("unhidden: %s. Commit manifest.txt, manifest.json and %s, then push; the launcher lists them on its next check." % (", ".join(ids), HIDDEN))
+
 # ---------- commands ----------
 def cmd_json(o):
     text, (head, glob, apps) = load(o.repo_dir)
@@ -231,6 +265,9 @@ def cmd_check(o):
     errs, warns = check(text, glob, apps, remote=o.remote, sha=o.sha, only=o.app)
     jp = os.path.join(o.repo_dir, "manifest.json")
     if os.path.exists(jp) and open(jp).read() != to_json(glob, apps): errs.append("manifest.json is out of date: run tools/mkmanifest.sh")
+    for h in load_hidden(o.repo_dir)[2]:
+        if any(a["id"] == h["id"] for a in apps): errs.append("app %s is in both manifest.txt and %s" % (h["id"], HIDDEN))
+        else: print("hidden %s %s (%s)" % (h["id"], h.get("ver", ""), HIDDEN))
     for w in warns: print("warn " + w)
     for e in errs: print("FAIL " + e)
     print("%s: %d apps, %d error(s), %d warning(s)" % ("ok" if not errs else "FAILED", len(apps), len(errs), len(warns)))
@@ -260,6 +297,9 @@ def cmd_publish(o):
     for f in files:
         if not os.path.isfile(f): die("no such file: %s" % f)
     text, (head, glob, apps) = load(d)
+    if any(x["id"] == app for x in load_hidden(d)[2]):
+        die("%s is hidden from the launcher (Rich, 23 Oct 2026; see %s). Ask Rich before publishing it; to list it\n"
+            "again run: python3 tools/amsrel.py unhide %s (then commit and push), and publish after that." % (app, HIDDEN, app))
     a = next((x for x in apps if x["id"] == app), None)
     comp = o.component or (a is not None and is_component(a))
     if a is not None and o.component and not is_component(a): die("%s is an app block, not a component" % app)
@@ -349,6 +389,7 @@ def main():
     sp.add_parser("json")
     c = sp.add_parser("check"); c.add_argument("--remote", action="store_true", help="check assets exist on GitHub with the listed size")
     c.add_argument("--sha", action="store_true", help="with --remote: download and compare sha256"); c.add_argument("--app")
+    u = sp.add_parser("unhide"); u.add_argument("ids", nargs="*"); u.add_argument("--all", action="store_true")
     p = sp.add_parser("publish")
     p.add_argument("app"); p.add_argument("ver"); p.add_argument("file")
     p.add_argument("--variant", nargs=2, action="append", default=[], metavar=("NAME", "FILE"), help="e.g. --variant amikit AmiSurf-0.79-AmiKit.lha")
@@ -362,7 +403,7 @@ def main():
     p.add_argument("--publish", action="store_true", help="really create the GitHub release and push the manifest (Rich's OK needed)")
     o = ap.parse_args()
     o.repo_dir = os.path.abspath(o.repo_dir)
-    try: {"json": cmd_json, "check": cmd_check, "publish": cmd_publish}[o.cmd](o)
+    try: {"json": cmd_json, "check": cmd_check, "publish": cmd_publish, "unhide": cmd_unhide}[o.cmd](o)
     except Bad as e: die(str(e))
     except subprocess.CalledProcessError as e: die("command failed: %s" % e)
 
