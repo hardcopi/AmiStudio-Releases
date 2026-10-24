@@ -53,12 +53,12 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.
 app amisurf
 name AmiSurf
 desc Modern web browser; the AmiStudio Host renders pages on a PC
-ver 1.05
+ver 1.06
 date 2026-10-24
-tag amisurf-v1.05
-file AmiSurf-1.05.lha
-size 482869
-sha256 d3de0b63d1ea83cc9d2818bd0636390fed2e4520357dd546d998951dac5c9f75
+tag amisurf-v1.06
+file AmiSurf-1.06.lha
+size 495879
+sha256 00e49e7b9b2bff92a83098659c40d48c164cbe8610cd7046d6f1dc5b83ba6960
 channel beta
 drawer AmiSurf
 exe AmiSurf
@@ -66,8 +66,8 @@ needs os=3.1 cpu=68020 fpu=1 mui=1
 host browser
 icon Icons/about.png
 min_launcher 0.1.17
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amisurf-v1.05
-variant amikit AmiSurf-1.05-AmiKit.lha 248673309 6758dd791351b051d3c4aa902c2d7104cbe5bee49b335287e4f9b527a673f611
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amisurf-v1.06
+variant amikit AmiSurf-1.06-AmiKit.lha 248691079 7f708f27d21af1b106efdd4b0ca9a8d63800bf3445ea7f9639b7829b2062704e
 
 app amidiscord
 name AmiDiscord
