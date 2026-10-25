@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "launcher_min": "0.1.1",
   "generated_from": "manifest.txt",
   "apps": [
@@ -130,13 +130,13 @@
       "kind": "app",
       "placeholder": false,
       "name": "AmiWrite",
-      "desc": "Table follow-ups: on-screen col widths, multi-para cells, selection, Draft clip, Galley row cache",
-      "ver": "0.1.11",
-      "date": "2026-10-24",
-      "tag": "amiwrite-v0.1.11",
-      "file": "AmiWrite-0.1.11.lha",
-      "size": 3188691,
-      "sha256": "e025fe418fbea963f126bdd5823e6f3bca9bd2705f7aaa59656ff055b5404295",
+      "desc": "Overnight Amiga-first: rulers, Outline, ARexx, pictures, Print, Own Screen, RTF/MD/HTML, Spelling, Comments/Footnotes; single 68020+FPU MUI build",
+      "ver": "0.1.12",
+      "date": "2026-10-25",
+      "tag": "amiwrite-v0.1.12",
+      "file": "AmiWrite-0.1.12.lha",
+      "size": 2351673,
+      "sha256": "4083ebb87de9a08c987a8899b3260396bf984026e497d9aadb6f00e688c32e98",
       "channel": "beta",
       "drawer": "AmiWrite",
       "exe": "AmiWrite",
@@ -144,12 +144,12 @@
         "os": "3.1",
         "cpu": "68020",
         "fpu": "1",
-        "mui": "opt"
+        "mui": "1"
       },
       "host": "none",
       "min_launcher": "0.1.1",
-      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.11",
-      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amiwrite-v0.1.11/AmiWrite-0.1.11.lha",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amiwrite-v0.1.12",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amiwrite-v0.1.12/AmiWrite-0.1.12.lha",
       "variants": []
     },
     {
