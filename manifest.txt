@@ -71,20 +71,20 @@ variant amikit AmiSurf-1.09-AmiKit.lha 248703453 41be0f64c6ca81cbcb8dcd6b9f96a22
 app amidiscord
 name AmiDiscord
 desc Discord for classic Amiga: the official Discord web app via AmiStudio Host, in a native window, with Amiga notifications. Needs AmiStudio Host 0.1.4+.
-ver 0.0.6
-date 2026-10-22
-tag amidiscord-v0.0.6
-file AmiDiscord-0.0.6.lha
-size 171638
-sha256 055e9226cea600e3002fc39af13a3ef15eb709d8095a105b7de4c4068cd65a15
+ver 0.0.7
+date 2026-10-25
+tag amidiscord-v0.0.7
+file AmiDiscord-0.0.7.lha
+size 76303
+sha256 c378eb689e420eedafb91d0fc9c8437f0b5a76f5b8fcdaacdba53f41e9bf822b
 channel beta
 drawer AmiDiscord
 exe AmiDiscord
-needs os=3.1 cpu=68020 fpu=1 mui=opt
+needs os=3.1 cpu=68020 fpu=1 mui=1
 host amidiscord
 icon Icons/about.png
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidiscord-v0.0.6
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amidiscord-v0.0.7
 
 app amiwrite
 name AmiWrite
