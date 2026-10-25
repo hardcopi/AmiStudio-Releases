@@ -26,10 +26,7 @@ The suite name stays **AmiStudio**. App display names are AmiPaint, AmiSurf, Ami
 formerly Paint / AmiStudio Paint and AmiStudio Browser). Matrix Chat (formerly AmiStudio Chat, release `matrixchat-v0.1`) is
 superseded by AmiDiscord and no longer listed; its release stays for reference.
 
-**Hidden for now (23 Oct 2026; AmiWrite listed again 24 Oct 2026):** AmiDrive and AmiGrid are not in `manifest.txt`, so the launcher does not list
-them while AmiSurf, AmiPaint and AmiDiscord are finished first. Their blocks are kept unchanged in `manifest-hidden.txt`,
-and their releases below stay where they are. `tools/publish.sh` refuses a hidden app. To list them again, run
-`python3 tools/amsrel.py unhide amidrive amigrid` (or `--all`), then commit and push.
+**No apps hidden (as of 25 Oct 2026):** every suite app is listed in `manifest.txt` again (AmiWrite on 24 Oct; AmiDrive and AmiGrid on 25 Oct, full production). `manifest-hidden.txt` is gone while empty. To hide an app later, move its block there and run `python3 tools/amsrel.py json`.
 
 "Coming soon" entries are placeholders: the launcher lists them as grey icons and does not offer to install them
 until a release is published.
