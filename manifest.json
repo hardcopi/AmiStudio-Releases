@@ -67,12 +67,12 @@
       "placeholder": false,
       "name": "AmiSurf",
       "desc": "Modern web browser; the AmiStudio Host renders pages on a PC",
-      "ver": "1.10",
+      "ver": "1.11",
       "date": "2026-10-25",
-      "tag": "amisurf-v1.10",
-      "file": "AmiSurf-1.10.lha",
-      "size": 503999,
-      "sha256": "0feb99bdfbbf790c2aeb01e9f8d92b0b954bbc149b6972831669006800b4cf56",
+      "tag": "amisurf-v1.11",
+      "file": "AmiSurf-1.11.lha",
+      "size": 512473,
+      "sha256": "7a4f3afc4af544716e17fbaf88b1a59a6d7d921224088012fd3459a79a2376df",
       "channel": "beta",
       "drawer": "AmiSurf",
       "exe": "AmiSurf",
@@ -85,15 +85,15 @@
       "host": "browser",
       "icon": "Icons/about.png",
       "min_launcher": "0.1.17",
-      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amisurf-v1.10",
-      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amisurf-v1.10/AmiSurf-1.10.lha",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amisurf-v1.11",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amisurf-v1.11/AmiSurf-1.11.lha",
       "variants": [
         {
           "name": "amikit",
-          "file": "AmiSurf-1.10-AmiKit.lha",
-          "size": 248703104,
-          "sha256": "d0e490f9c406e2c9634ae1c9879f689d61ee111635a39e2efe4ff004fb5da419",
-          "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amisurf-v1.10/AmiSurf-1.10-AmiKit.lha"
+          "file": "AmiSurf-1.11-AmiKit.lha",
+          "size": 248711576,
+          "sha256": "b515172fc00b363c8e44483527858041ab814718f1ac3eebdb862c1c65b7d603",
+          "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amisurf-v1.11/AmiSurf-1.11-AmiKit.lha"
         }
       ]
     },
