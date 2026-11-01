@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "launcher_min": "0.1.1",
   "generated_from": "manifest.txt",
   "apps": [
@@ -38,12 +38,12 @@
       "placeholder": false,
       "name": "AmiPaint",
       "desc": "Photoshop-class paint program (PhotoCraft based)",
-      "ver": "1.0.68",
-      "date": "2026-10-25",
-      "tag": "amipaint-v1.0.68",
-      "file": "AmiPaint-1.0.68.lha",
-      "size": 2451366,
-      "sha256": "8d056c5a0803077f22abeb14830d984a95c8dd80d22168ac8f287bb4f99a1a4d",
+      "ver": "1.0.69",
+      "date": "2026-11-01",
+      "tag": "amipaint-v1.0.69",
+      "file": "AmiPaint-1.0.69.lha",
+      "size": 3530404,
+      "sha256": "5b3e971a5cfa4668fcc454f148fef85207afbbceda23237cf48e6f793b5d070f",
       "channel": "beta",
       "drawer": "AmiPaint",
       "exe": "AmiPaint",
@@ -57,8 +57,8 @@
       "host": "none",
       "icon": "Icons/about.png",
       "min_launcher": "0.1.1",
-      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.68",
-      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amipaint-v1.0.68/AmiPaint-1.0.68.lha",
+      "notes": "https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.69",
+      "url": "https://github.com/hardcopi/AmiStudio-Releases/releases/download/amipaint-v1.0.69/AmiPaint-1.0.69.lha",
       "variants": []
     },
     {
