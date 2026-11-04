@@ -10,7 +10,7 @@
 # Matrix Chat (matrixchat-v0.1) is superseded by AmiDiscord and no longer listed.
 # None hidden as of 25 Oct 2026 (AmiWrite 24 Oct; AmiDrive and AmiGrid 25 Oct).
 format 1
-updated 2026-11-02
+updated 2026-11-04
 launcher_min 0.1.1
 
 app launcher
@@ -34,12 +34,12 @@ notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/launcher-v0.1.
 app amipaint
 name AmiPaint
 desc Photoshop-class paint program (PhotoCraft based)
-ver 1.0.70
-date 2026-11-02
-tag amipaint-v1.0.70
-file AmiPaint-1.0.70.lha
-size 3907463
-sha256 fa81783e9754c014599685e831af76475c812e16014f820a182603f6ac124944
+ver 1.0.71
+date 2026-11-04
+tag amipaint-v1.0.71
+file AmiPaint-1.0.71.lha
+size 3915182
+sha256 3aeec8e527151dd7a807390f00ca8398cfe2fdb431f852a525989b0138f20fbb
 channel beta
 drawer AmiPaint
 exe AmiPaint
@@ -47,7 +47,7 @@ needs os=3.1 cpu=68020 fpu=1 mui=1 rtg=opt
 host none
 icon Icons/about.png
 min_launcher 0.1.1
-notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.70
+notes https://github.com/hardcopi/AmiStudio-Releases/releases/tag/amipaint-v1.0.71
 
 app amisurf
 name AmiSurf
